@@ -1,32 +1,41 @@
-# Executando a aplicação local
+# Gerador de Senhas com Redis
+
+Este é um projeto de uma aplicação em Python que gera senhas aleatórias e utiliza o Redis como um banco de dados para armazenamento temporário das senhas geradas. Este README.md fornecerá instruções sobre como executar a aplicação localmente e também inclui informações sobre como dockerizar o projeto.
+
+### Pré-requisitos
+* Git
+* Python3
+* Pip
+* Docker (opcional, se desejar executar via contêiner)
+
+## Executando a aplicação local
 
 1. Clone o repositório:
-
 ```
-git clone https://github.com/badtuxx/giropops-senhas.git
+https://github.com/nataliagranato/giropops-senhas.git
 ```
 
 2. Entre no diretório de trabalho:
-
 ```
 cd giropops-senhas
 ```
 
-3. Atualizando o sistema operacional
-
+3. Atualize o sistema operacional:
 ```
 sudo apt update -y
 ```
 
-4. Certifique de ter o python instalado e instale o gerenciador de pacotes:
-
+4. Certifique-se de ter o Python instalado e instale o gerenciador de pacotes Pip:
 ```
-sudo apt-get install pip
+sudo apt-get install python3-pip -y
 ```
 
-5. Atualizando o projeto:
+5. Atualize o projeto:
+```
+pip install --upgrade Flask
+```
 
-*Esse passo foi necessário, pois encontramos o seguinte erro:*
+**Esse passo foi necessário, pois tive o seguinte problema:**
 
 ```
 flask run --host=0.0.0.0
@@ -44,36 +53,56 @@ Traceback (most recent call last):
 ImportError: cannot import name 'url_quote' from 'werkzeug.urls' (/usr/local/lib/python3.8/dist-packages/werkzeug/urls.py)
 ```
 
-```
-pip install --upgrade Flask
-```
 
-Ainda assim foi necessário especificar uma versão fixa para o Werkzeug: No arquivo requirements.txt, adicionando uma versão específica para o Werkzeug, como Werkzeug==2.2.2.
+Se necessário, adicione uma versão específica do Werkzeug ao arquivo requirements.txt, como Werkzeug==2.2.2, para resolver possíveis problemas de importação.
 
-Isso garantirá que a versão correta do Werkzeug seja instalada e resolva o problema.
-
-6. Instalando o Redis, uma dependência do projeto:
-
+6. Instale o Redis, uma dependência do projeto:
 ```
 sudo apt-get install redis -y
 ```
 
-7. Iniciando o Redis:
-
+7. Inicie o Redis:
 ```
-systemctl start redis && systemctl status redis
+sudo systemctl start redis && systemctl status redis
 ```
 
-8. Instale todas as dependências do python:
-
+8. Instale todas as dependências do Python:
 ```
 pip install --no-cache-dir -r requirements.txt
 ```
 
-9. Criando uma variável de ambiente para que a aplicação encontre o Redis:
-
+9. Crie uma variável de ambiente para que a aplicação encontre o Redis:
 ```
 export REDIS_HOST=localhost
+```
+
+# Dockerização do Projeto
+Para dockerizar o projeto, siga estas etapas:
+
+1. Construa a imagem docker:
+```
+docker build -t nataliagranato/linuxtips-giropops-senhas:1.0 .
+```
+
+2.  Inicie um contêiner Redis:
+```
+docker container run -d -p 6000:6379 --name redis redis:alpine3.19
+```
+
+3. Use o Docker Compose para construir e iniciar os serviços:
+```
+docker-compose up -d
+```
+
+Isso iniciará tanto a aplicação quanto o contêiner Redis. A aplicação estará disponível em http://localhost:5000/.
+
+Certifique-se de que todas as portas necessárias estejam liberadas e de que não haja conflitos com outras aplicações em execução em sua máquina.
+
+Observação: As versões dos pacotes e dependências podem variar. Certifique-se de usar as versões mais recentes e compatíveis com seu ambiente.
+
+4. Caso não queira utilizar o Compose, inicialize o container da aplicação assim:
+```
+docker run -d -it -p 5000:5000 --name giropops-app --link redis:redis nataliagranato/linuxtips-giropops-senhas:1.0
 ```
 
 10. Iniciando a aplicação:
