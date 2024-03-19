@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   giropops-senhas:
-    image: nataliagranato/linuxtips-giropops-senhas:1.0
+    image: nataliagranato/linuxtips-giropops-senhas:5.0
     build: .
     ports:
       - "5000:5000"

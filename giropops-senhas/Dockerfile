@@ -1,23 +1,25 @@
 # Etapa de construção
-FROM alpine:3.19.1 as build
-COPY ./ /app
-RUN apk add --no-cache python3 py3-pip && \
-    python3 -m venv /app/venv && \
-    source /app/venv/bin/activate && \
-    pip install --no-cache-dir -r /app/requirements.txt
+FROM cgr.dev/chainguard/python:latest-dev@sha256:5727408976bf17a1f034ead1bb6f9c145b392e3ffb4246c7e557680dc345f6ff as build
+
+# Definir o diretório de trabalho
+WORKDIR /app
+
+# Copiar arquivos para o diretório de trabalho
+COPY . /app
+
+# Instalar dependências
+RUN pip install -r requirements.txt --user
 
 # Etapa final
-FROM alpine:3.19.1
-COPY --from=build /app /app
+FROM cgr.dev/chainguard/python:latest@sha256:a66be254adc25216a93a381b868d8ca68c0b56f489cd9c0d50d9707b49a8a0a4
+
+# Definir o diretório de trabalho
 WORKDIR /app
-ENV REDIS_HOST=localhost
-RUN apk add --no-cache python3 py3-pip && \
-    rm -rf /root/.cache /root/.cargo /usr/local/include /usr/local/share
 
-# Definindo o comando principal e o argumento para o entrypoint
-ENTRYPOINT ["/bin/sh", "-c", "source /app/venv/bin/activate && flask run --host=0.0.0.0"]
+COPY --from=build /home/nonroot/.local/lib/python3.12/site-packages /home/nonroot/.local/lib/python3.12/site-packages
 
-# Definindo o argumento padrão para o comando principal
-CMD []
+# Copiar o diretório de trabalho da etapa de construção para o diretório de trabalho da etapa final
+COPY --from=build /app /app
 
-EXPOSE 5000
+# Definir o comando padrão do contêiner
+ENTRYPOINT ["python", "-m", "flask", "run", "--host=0.0.0.0"]
