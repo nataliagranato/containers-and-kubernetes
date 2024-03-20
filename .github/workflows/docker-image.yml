@@ -57,7 +57,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@062f2592684a31eb3aa050cc61e7ca1451cecd3d
         with:
-          image-ref: nataliagranato/linuxtips-giropops-senhas:latest
+          image-ref: nataliagranato/linuxtips-giropops-senhas:8bee0d1-20240320175550
           format: 'sarif'
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
           output: 'trivy-results.sarif'
