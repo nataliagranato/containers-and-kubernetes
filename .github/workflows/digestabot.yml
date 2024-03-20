@@ -11,13 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
-      pull-requests: write
-      id-token: write
+      contents: write # Permissão para escrever no repositório
+      pull-requests: write # Permissão para abrir PRs
+      id-token: write # Necessário para solicitar o JWT (JSON Web Token)
 
     steps:
-    - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
-
-    - uses: chainguard-dev/digestabot@3830b931642989ef391e6db4c0bbcd2bc20d064f
+    - uses: actions/checkout@v4
+    - uses: chainguard-dev/digestabot@v1.0.2
       with:
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        signoff: true 
+        author: update-bot 
+        committer: contato@nataliagranato.xyz # Define o email do autor do commit
+        labels-for-pr: automated pr, kind/cleanup, release-note-none 
+        branch-for-pr: update-digests 
+        title-for-pr: Update images digests 
+        commit-message: Update images digests
