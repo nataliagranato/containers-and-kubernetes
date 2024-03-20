@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Extract commit hash
+        id: extract_hash
+        run: |
+          HASH=$(git rev-parse HEAD)
+          echo "Commit hash: $HASH"
+          echo "::set-output name=hash::$HASH"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.extract_hash.outputs.hash }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        env:
+          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
