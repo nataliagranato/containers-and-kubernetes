@@ -1,10 +1,9 @@
 name: Image digest update
 
 on:
-  workflow_dispatch:
-  schedule:
-    # At the end of every day
-    - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
 
 jobs:
   image-update:
