@@ -1,20 +1,40 @@
-version: '3.8'
+version: '3.9'
 
 services:
   giropops-senhas:
-    image: nataliagranato/linuxtips-giropops-senhas:5.0
     build: .
     ports:
       - "5000:5000"
+    networks:
+      - giropops-senhas
     environment:
       - REDIS_HOST=redis
-    depends_on:
-      - redis
+    volumes:
+      - natalia:/granato
+    deploy:
+      replicas: 1
+      resources:
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+        limits:
+          cpus: '0.50'
+          memory: 256M
 
   redis:
-    container_name: redis
-    image: redis:alpine3.19
-
+    image: redis
+    command: redis-server --appendonly yes
+    networks:
+      - giropops-senhas
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 networks:
   giropops-senhas:
     driver: bridge
+
+volumes:
+  natalia:
