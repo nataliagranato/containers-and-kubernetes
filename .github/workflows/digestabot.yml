@@ -21,9 +21,8 @@ jobs:
       with:
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         signoff: true 
-        author: update-bot 
-        committer: nataliagranato@ufmg.br # Define o email do autor do commit
+        author: "Natália Granato <nataliagranato@ufmg.br>" 
+        committer: "Natália Granato <nataliagranato@ufmg.br>" 
         labels-for-pr: automated pr, kind/cleanup, release-note-none 
         branch-for-pr: update-digests 
-        title-for-pr: Update images digests 
-        commit-message: Update images digests
+        title-for-pr: Update images digests
