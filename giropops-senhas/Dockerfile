@@ -1,5 +1,5 @@
 # Etapa de construção
-FROM cgr.dev/chainguard/python:latest-dev@sha256:d36bdbff6a1a6e4bdb2a09dbd962457948b8cd1f4b2c1952a72cc235697a27a1 as build
+FROM cgr.dev/chainguard/python:latest-dev@sha256:03b630216f9fa76a0dedc4e7f6f40bea22b2fd56e32a625227d8135e9256c2da as build
 
 # Definir o diretório de trabalho
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY . /app
 RUN pip install -r requirements.txt --user
 
 # Etapa final
-FROM cgr.dev/chainguard/python:latest@sha256:a4c167ce35fdf4b7edb33084709f5d29906e3326e9cf13d1809ec032c847fad6
+FROM cgr.dev/chainguard/python:latest@sha256:11857e623e3869769d46f875533358a4658c6e08263cc9dafc32711a4a36c8c7
 
 # Definir o diretório de trabalho
 WORKDIR /app
