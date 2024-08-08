@@ -15,10 +15,21 @@ spec:
         app: redis
     spec:
       containers:
-      - image: redis
+      - image: cgr.dev/chainguard/redis
         name: redis
         ports:
-          - containerPort: 6379
+        - containerPort: 6379
+        securityContext:
+          runAsGroup: 10001
+          runAsUser: 10001
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
         resources:
           limits:
             memory: "256Mi"

@@ -19,7 +19,18 @@ spec:
         name: giropops-senhas
         ports:
         - containerPort: 5000
-        imagePullPolicy: Always
+        securityContext:
+          runAsGroup: 10001
+          runAsUser: 10001
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             memory: "256Mi"

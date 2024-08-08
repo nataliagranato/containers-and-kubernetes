@@ -1,0 +1,8 @@
+.github
+manifests
+.gitignore
+Dockerfile
+docker-compose.yml
+helmfile.yaml
+LICENSE
+README.md

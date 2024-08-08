@@ -5,7 +5,6 @@ import random
 import os
 from prometheus_client import Counter, start_http_server, generate_latest
 
-
 app = Flask(__name__)
 
 redis_host = os.environ.get('REDIS_HOST', 'redis-service')
@@ -15,7 +14,6 @@ redis_password = ""
 r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True)
 
 senha_gerada_counter = Counter('senha_gerada', 'Contador de senhas geradas')
-
 
 def criar_senha(tamanho, incluir_numeros, incluir_caracteres_especiais):
     caracteres = string.ascii_letters
@@ -46,7 +44,6 @@ def index():
         return render_template('index.html', senhas_geradas=senhas_geradas, senha=senhas_geradas[0]['senha'] or '' )
     return render_template('index.html')
 
-
 @app.route('/api/gerar-senha', methods=['POST'])
 def gerar_senha_api():
     dados = request.get_json()
@@ -71,6 +68,10 @@ def listar_senhas():
 @app.route('/metrics')
 def metrics():
     return generate_latest()
+
+@app.route('/health')
+def health():
+    return jsonify({"status": "healthy"}), 200
 
 if __name__ == '__main__':
     import logging
