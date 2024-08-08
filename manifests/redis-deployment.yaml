@@ -3,7 +3,8 @@ kind: Deployment
 metadata:
   labels:
     app: redis
-  name: redis-deployment
+  name: redis
+  namespace: giropops-senhas
 spec:
   replicas: 1
   selector:
@@ -15,25 +16,24 @@ spec:
         app: redis
     spec:
       containers:
-      - image: cgr.dev/chainguard/redis
+      - image: nataliagranato/redis:v1.0.0
         name: redis
         ports:
         - containerPort: 6379
-        securityContext:
-          runAsGroup: 10001
-          runAsUser: 10001
-          allowPrivilegeEscalation: false
-          runAsNonRoot: true
-          seccompProfile:
-            type: RuntimeDefault
-          capabilities:
-            drop:
-            - ALL
-          readOnlyRootFilesystem: true
+        imagePullPolicy: Always
         resources:
           limits:
-            memory: "256Mi"
-            cpu: "500m"
+            cpu: "0.1"
+            memory: 128Mi
           requests:
-            memory: "128Mi"
-            cpu: "250m"
+            cpu: "0.1"
+            memory: 128Mi
+        volumes:
+        - name: redis
+          persistentVolumeClaim:
+            claimName: redis-pvc
+            metadata:
+              namespace: giropops-senhas
+            spec:
+              storageClassName: 'oci-bv'
+              volumeName: 'redis'

@@ -1,6 +1,6 @@
 services:
   giropops-senhas:
-    image: nataliagranato/giropops-senhas:v1.0.0
+    image: nataliagranato/giropops-senhas:v1.1.0
     ports:
       - "5000:5000"
     networks:

@@ -1,16 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: giropops-senhas
+  name: giropops-service
+  namespace: giropops-senhas
   labels:
     app: giropops-senhas
 spec:
   selector:
     app: giropops-senhas
   ports:
-    - protocol: TCP
-      port: 5000
-      nodePort: 32500
-      targetPort: 5000
-      name: tcp-app
-  type: NodePort
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  type: ClusterIP

@@ -1,134 +1,175 @@
-# Gerador de Senhas com Redis
+# Giropops Senhas
 
-Este é um projeto de uma aplicação em Python que gera senhas aleatórias e utiliza o Redis como um banco de dados para armazenamento temporário das senhas geradas. Este README.md fornecerá instruções sobre como executar a aplicação localmente e também inclui informações sobre como dockerizar o projeto.
+O projeto **Giropops Senhas** é uma aplicação web desenvolvida com Flask que permite a geração e gerenciamento de senhas. A aplicação utiliza Redis para armazenamento de dados e é containerizada usando Docker. Além disso, o projeto inclui integração contínua com GitHub Actions para construção e envio de imagens Docker, bem como verificação de vulnerabilidades.
 
-### Pré-requisitos
+## Ferramentas e Tecnologias Utilizadas
 
-* Git
-* Python3
-* Pip
-* Docker (opcional, se desejar executar via contêiner)
+- **Python**: Linguagem de programação principal.
+- **Flask**: Framework web utilizado para construir a aplicação.
+- **Redis**: Banco de dados em memória utilizado para armazenamento de dados.
+- **Docker**: Utilizado para containerização da aplicação.
+- **GitHub Actions**: Utilizado para integração contínua e automação de tarefas.
+- **Cosign**: Utilizado para assinatura e verificação de imagens de contêiner.
+- **Kyverno**: Utilizado para políticas de segurança no Kubernetes.
+- **Kubernetes**: Utilizado para orquestração de contêineres em produção.
+- **Prometheus**: Utilizado para monitoramento e alertas.
+- **APKO**: Utilizado para construção de imagens de contêiner.
+- **Melange**: Utilizado para construção de pacotes.
+- **Helm**: Utilizado para gerenciamento de pacotes Kubernetes.
 
-## Executando a aplicação local
+## Extras
+
+- **Helmfile**: Utilizado para gerenciar múltiplos gráficos Helm.
+- **Docker Compose**: Utilizado para orquestração de contêineres.
+- **Hadolint**: Utilizado para análise de Dockerfiles.
+- **Trivy**: Utilizado para análise de vulnerabilidades em imagens de contêiner.
+- **Snyk**: Utilizado para análise de vulnerabilidades em dependências.
+- **CodeQL**: Utilizado para análise de código estático.
+- **CodeRabbit**: IA para Code Review e resumo de pull requests.
+- **Kind**: Utilizado para execução de clusters Kubernetes em Docker.
+- **Cert Manager**: Utilizado para gerenciamento de certificados TLS.
+
+## Utilizando a aplicação localmente
 
 1. Clone o repositório:
 
-```
-https://github.com/nataliagranato/giropops-senhas.git
-```
-
-2. Entre no diretório de trabalho:
-
-```
+```bash
+git clone https://github.com/Tech-Preta/giropops-senhas.git
 cd giropops-senhas
 ```
 
-3. Atualize o sistema operacional:
+2. Construa a imagem Docker da  aplicação e do Redis:
 
-```
-sudo apt update -y
-```
-
-4. Certifique-se de ter o Python instalado e instale o gerenciador de pacotes Pip:
-
-```
-sudo apt-get install python3-pip -y
+```bash
+docker build -f Dockerfile -t nataliagranato/giropops-senhas:v1.0.0 .
+docker build -f Dockerfile.redis -t nataliagranato/redis:v1.0.0 .
 ```
 
-5. Atualize o projeto:
+3. Inicie a aplicação e o Redis:
 
-```
-pip install --upgrade Flask
-```
-
-**Esse passo foi necessário, pois tive o seguinte problema:**
-
-```
-flask run --host=0.0.0.0
-Traceback (most recent call last):
-  File "/usr/local/bin/flask", line 5, in <module>
-    from flask.cli import main
-  File "/usr/local/lib/python3.8/dist-packages/flask/__init__.py", line 7, in <module>
-    from .app import Flask as Flask
-  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 27, in <module>
-    from . import cli
-  File "/usr/local/lib/python3.8/dist-packages/flask/cli.py", line 17, in <module>
-    from .helpers import get_debug_flag
-  File "/usr/local/lib/python3.8/dist-packages/flask/helpers.py", line 14, in <module>
-    from werkzeug.urls import url_quote
-ImportError: cannot import name 'url_quote' from 'werkzeug.urls' (/usr/local/lib/python3.8/dist-packages/werkzeug/urls.py)
+```bash
+docker run -d --name redis -p 6380:6379 nataliagranato/redis:v1.0.0
+docker run -d --name giropops-senhas -p 5000:5000 --link redis:redis nataliagranato/giropops-senhas:v1.0.0
 ```
 
-Se necessário, adicione uma versão específica do Werkzeug ao arquivo requirements.txt, como Werkzeug==2.2.2, para resolver possíveis problemas de importação.
+Se preferir, você pode usar o Docker Compose para iniciar a aplicação e o Redis:
 
-6. Instale o Redis, uma dependência do projeto:
-
-```
-sudo apt-get install redis -y
-```
-
-7. Inicie o Redis:
-
-```
-sudo systemctl start redis && systemctl status redis
-```
-
-8. Instale todas as dependências do Python:
-
-```
-pip install --no-cache-dir -r requirements.txt
-```
-
-9. Crie uma variável de ambiente para que a aplicação encontre o Redis:
-
-```
-export REDIS_HOST=localhost
-```
-
-10. Iniciando a aplicação:
-
-```
-flask run --host=0.0.0.0
-```
-
-# Dockerização do Projeto
-
-Para dockerizar o projeto, siga estas etapas:
-
-1. Construa a imagem docker:
-
-```
-docker build -t nataliagranato/linuxtips-giropops-senhas:1.0 .
-```
-
-2. Inicie um contêiner Redis:
-
-```
-docker container run -d -p 6000:6379 --name redis redis:alpine3.19
-```
-
-3. Descubra o IPAddress do Redis:
-
-```
-docker inspect ID_REDIS | grep IPAddress
-```
-
-4. Executando a aplicação:
-
-```
-docker run -d --name giropops-senhas -p 5000:5000 --env REDIS_HOST=IP_REDIS giropops-senhas:5.0
-```
-
-Ou
-
-5. Use o Docker Compose para construir e iniciar os serviços:
-
-```
+```bash
 docker-compose up -d
 ```
 
-Isso iniciará tanto a aplicação quanto o contêiner Redis. A aplicação estará disponível em <http://localhost:5000/>.
+4. Acesse a aplicação em seu navegador:
 
-Certifique-se de que todas as portas necessárias estejam liberadas e de que não haja conflitos com outras aplicações em execução em sua máquina.
+```
+http://localhost:5000
+```
 
-Observação: As versões dos pacotes e dependências podem variar. Certifique-se de usar as versões mais recentes e compatíveis com seu ambiente.
+## Contribuindo
+
+Se você deseja contribuir com o projeto, siga as instruções abaixo:
+
+**Criando uma Issue:**
+
+### Atualização do README.md
+
+Aqui está o README.md atualizado para incluir informações sobre os templates de pull request e issue.
+
+```markdown
+# Giropops Senhas
+
+O projeto **Giropops Senhas** é uma aplicação web
+
+ desenvol
+
+vida com Flask que permite a geração e gerenciamento de senhas. A aplicação utiliza Redis para armazenamento de dados e é containerizada usando Docker. Além disso, o projeto inclui integração contínua com GitHub Actions para construção e envio de imagens Docker, bem como verificação de vulnerabilidades.
+
+## Ferramentas e Tecnologias Utilizadas
+
+- **Python**: Linguagem de programação principal.
+- **Flask**: Framework web utilizado para construir a aplicação.
+- **Redis**: Banco de dados em memória utilizado para armazenamento de dados.
+- **Docker**: Utilizado para containerização da aplicação.
+- **GitHub Actions**: Utilizado para integração contínua e automação de tarefas.
+- **Cosign**: Utilizado para assinatura e verificação de imagens de contêiner.
+- **Kyverno**: Utilizado para políticas de segurança no Kubernetes.
+- **Kubernetes**: Utilizado para orquestração de contêineres em produção.
+- **Prometheus**: Utilizado para monitoramento e alertas.
+- **APKO**: Utilizado para construção de imagens de contêiner.
+- **Melange**: Utilizado para construção de pacotes.
+- **Helm**: Utilizado para gerenciamento de pacotes Kubernetes.
+
+## Extras
+
+- **Helmfile**: Utilizado para gerenciar múltiplos gráficos Helm.
+- **Docker Compose**: Utilizado para orquestração de contêineres.
+- **Hadolint**: Utilizado para análise de Dockerfiles.
+- **Trivy**: Utilizado para análise de vulnerabilidades em imagens de contêiner.
+- **Snyk**: Utilizado para análise de vulnerabilidades em dependências.
+- **CodeQL**: Utilizado para análise de código estático.
+- **CodeRabbit**: IA para Code Review e resumo de pull requests.
+- **Kind**: Utilizado para execução de clusters Kubernetes em Docker.
+- **Cert Manager**: Utilizado para gerenciamento de certificados TLS.
+
+## Utilizando a aplicação localmente
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/Tech-Preta/giropops-senhas.git
+cd giropops-senhas
+```
+
+2. Construa a imagem Docker da aplicação e do Redis:
+
+```bash
+docker build -f Dockerfile -t nataliagranato/giropops-senhas:v1.0.0 .
+docker build -f Dockerfile.redis -t nataliagranato/redis:v1.0.0 .
+```
+
+3. Inicie a aplicação e o Redis:
+
+```bash
+docker run -d --name redis -p 6380:6379 nataliagranato/redis:v1.0.0
+docker run -d --name giropops-senhas -p 5000:5000 --link redis:redis nataliagranato/giropops-senhas:v1.0.0
+```
+
+Se preferir, você pode usar o Docker Compose para iniciar a aplicação e o Redis:
+
+```bash
+docker-compose up -d
+```
+
+4. Acesse a aplicação em seu navegador:
+
+```
+http://localhost:5000
+```
+
+## Contribuindo
+
+Contribuições são bem-vindas! Por favor, siga as diretrizes abaixo ao contribuir para este projeto.
+
+### Criando uma Issue
+
+Se você encontrar um bug ou tiver uma ideia para uma nova funcionalidade, por favor, crie uma issue usando o template apropriado:
+
+1. Vá para a aba "Issues" do repositório.
+2. Clique em "New issue".
+3. Selecione o template de bug ou feature request.
+4. Preencha as informações necessárias e envie a issue.
+
+### Fazendo um Pull Request
+
+Para contribuir com código, siga os passos abaixo:
+
+1. Fork o repositório.
+2. Crie uma nova branch para sua feature ou correção de bug (`git checkout -b minha-feature`).
+3. Faça as mudanças necessárias e adicione testes, se aplicável.
+4. Commit suas mudanças (`git commit -m 'Adiciona minha nova feature'`).
+5. Push para a branch (`git push origin minha-feature`).
+6. Abra um pull request usando o template de pull request.
+
+### Templates
+
+- [Template de Pull Request](.github/PULL_REQUEST_TEMPLATE.md)
+- [Template de Issue de Bug](.github/ISSUE_TEMPLATE/bug_report.md)
