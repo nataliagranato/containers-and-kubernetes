@@ -46,6 +46,7 @@ jobs:
             SHORT_HASH=$(git log -1 --pretty=format:%h | cut -c1-5)
             TIMESTAMP=$(date +%Y%m%d%H%M%S)
             echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
+            echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"
         
       - name: Construir e enviar a imagem Docker
         uses: docker/build-push-action@v4
