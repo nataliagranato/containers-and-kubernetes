@@ -1,11 +1,16 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
-  - package-ecosystem: "github-actions" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "daily"
+- package-ecosystem: "pip" # Para Python
+  directory: "/" # Localização do requirements.txt
+  schedule:
+    interval: "daily"
+
+- package-ecosystem: "docker" # Para Dockerfile
+  directory: "/" # Localização do Dockerfile
+  schedule:
+    interval: "daily"
+
+- package-ecosystem: "github-actions" # Para GitHub Actions
+  directory: "/" # Localização do workflow YAML
+  schedule:
+    interval: "daily"
