@@ -19,13 +19,13 @@ jobs:
         uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
 
       - name: Configurar QEMU
-        uses: docker/setup-qemu-action@v2docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        uses: docker/setup-qemu-action@v3.2.0
 
       - name: Instalar Cosign
-        uses: sigstore/cosign-installer@v1sigstore/cosign-installer@59acb6260d9c0ba8f4a2f9d9b48431a222b68e20
+        uses: sigstore/cosign-installer@v3.6.0
 
       - name: Configurar Docker Buildx
-        uses: docker/setup-buildx-action@v2docker/setup-buildx-action@988b5a0280414f521da01fcc63a27aeeb4b104db
+        uses: docker/setup-buildx-action@v3.6.1
 
       - name: Fazer login no Docker Hub
         uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
