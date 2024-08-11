@@ -1,0 +1,128 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "sbom-sha256:a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575",
+  "spdxVersion": "SPDX-2.3",
+  "creationInfo": {
+    "created": "2024-08-08T19:51:14Z",
+    "creators": [
+      "Tool: apko (v0.17.0-dirty)",
+      "Organization: Chainguard, Inc"
+    ],
+    "licenseListVersion": "3.16"
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://spdx.org/spdxdocs/apko/",
+  "documentDescribes": [
+    "SPDXRef-Package-sha256-a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575"
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-sha256-a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575",
+      "name": "sha256:a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575",
+      "versionInfo": "sha256:a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575",
+      "filesAnalyzed": false,
+      "description": "Multi-arch image index",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Chainguard, Inc.",
+      "sourceInfo": "Generated at image build time by apko",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3Aa0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "name": "sha256:1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "versionInfo": "sha256:1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Chainguard, Inc.",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3A1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-317e1f8bfee0c6b0b8dc356a1d83bea8b64ad78aec58daafca0519af57f1f0c7",
+      "name": "sha256:317e1f8bfee0c6b0b8dc356a1d83bea8b64ad78aec58daafca0519af57f1f0c7",
+      "versionInfo": "sha256:317e1f8bfee0c6b0b8dc356a1d83bea8b64ad78aec58daafca0519af57f1f0c7",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Chainguard, Inc.",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "317e1f8bfee0c6b0b8dc356a1d83bea8b64ad78aec58daafca0519af57f1f0c7"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3A317e1f8bfee0c6b0b8dc356a1d83bea8b64ad78aec58daafca0519af57f1f0c7?arch=arm64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-https-C47C47github.comC47Tech-PretaC47giropops-senhas.gitC64528b4af044cd54e89738f505b529d792dffc8c46",
+      "name": "github.com/Tech-Preta/giropops-senhas.git",
+      "versionInfo": "528b4af044cd54e89738f505b529d792dffc8c46",
+      "filesAnalyzed": false,
+      "description": "Image configuration source",
+      "downloadLocation": "https://github.com/Tech-Preta/giropops-senhas.git@528b4af044cd54e89738f505b529d792dffc8c46",
+      "supplier": "Organization: Chainguard, Inc.",
+      "primaryPackagePurpose": "SOURCE",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "528b4af044cd54e89738f505b529d792dffc8c46"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/Tech-Preta/giropops-senhas@528b4af044cd54e89738f505b529d792dffc8c46",
+          "referenceType": "purl"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-317e1f8bfee0c6b0b8dc356a1d83bea8b64ad78aec58daafca0519af57f1f0c7"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-a0952ad4b5bb51af7d6d1a06138e72d52510323c90cba5699075b6a81967c575",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-Package-https-C47C47github.comC47Tech-PretaC47giropops-senhas.gitC64528b4af044cd54e89738f505b529d792dffc8c46"
+    }
+  ]
+}

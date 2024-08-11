@@ -1,0 +1,18 @@
+entrypoint:
+  command: /work/start.sh
+
+archs:
+- x86_64
+- aarch64
+
+contents:
+  keyring:
+  - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+  repositories:
+  - https://packages.wolfi.dev/os
+  - ./
+  packages:
+  - python3
+  - py3-pip
+  - ca-certificates-bundle
+  - wolfi-base

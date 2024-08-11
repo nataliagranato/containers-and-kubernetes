@@ -1,0 +1,17 @@
+README.md
+OWNERS
+helmfile.yaml
+.github/
+docs/
+kind/
+manifests/
+screenshots/
+scripts/
+LICENSE
+Makefile
+apko/
+kyverno/
+Dockerfile
+Dockerfile.redis
+docker-compose.yml
+

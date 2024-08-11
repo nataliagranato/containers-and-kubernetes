@@ -1,0 +1,1029 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "sbom-sha256:6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68",
+  "spdxVersion": "SPDX-2.3",
+  "creationInfo": {
+    "created": "2024-08-08T19:51:14Z",
+    "creators": [
+      "Tool: apko (v0.17.0-dirty)",
+      "Organization: Chainguard, Inc"
+    ],
+    "licenseListVersion": "3.16"
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://spdx.org/spdxdocs/apko/",
+  "documentDescribes": [
+    "SPDXRef-Package-sha256-1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0"
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-sha256-1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "name": "sha256:1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "versionInfo": "sha256:1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "filesAnalyzed": false,
+      "description": "apko container image",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Wolfi",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3A1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68",
+      "name": "sha256:6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68",
+      "versionInfo": "20230201",
+      "filesAnalyzed": false,
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Wolfi",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3A6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ca-certificates-bundle-20240705-r0",
+      "name": "ca-certificates-bundle",
+      "versionInfo": "20240705-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/ca-certificates-bundle@20240705-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/ca-certificates@20240705?vcs_url=git%2Bhttps%3A%2F%2Fgitlab.alpinelinux.org%2Falpine%2Fca-certificates%40ff907f8be39b0ecec68a99a2bd0f235d1782b1d6",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@29dabcaa9232d7814e05f5e311ca6562ab42efda#ca-certificates.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-py3-pip-wheel-24.2-r0",
+      "name": "py3-pip-wheel",
+      "versionInfo": "24.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/py3-pip-wheel@24.2-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/py3-pip-wheel@24.2?checksum=sha256%3A2cd581cf58ab7fcfca4ce8efa6dcacd0de5bf8d0a3eb9ec927e07405f4d9e2a2\u0026download_url=https%3A%2F%2Ffiles.pythonhosted.org%2Fpackages%2Fpy3%2Fp%2Fpip%2Fpip-24.2-py3-none-any.whl",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@0140e956c2c4cd48c8f52f08d922dffda22c424a#py3-pip-wheel.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-wolfi-baselayout-20230201-r15",
+      "name": "wolfi-baselayout",
+      "versionInfo": "20230201-r15",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/wolfi-baselayout@20230201-r15?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@a210624b093af744aa09b69372345cf3356ae18b#wolfi-baselayout.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ld-linux-2.39-r8",
+      "name": "ld-linux",
+      "versionInfo": "2.39-r8",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/ld-linux@2.39-r8?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/glibc@2.39?checksum=sha256%3Af77bd47cf8170c57365ae7bf86696c118adb3b120d3259c64c502d3dc1e2d926\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Flibc%2Fglibc-2.39.tar.xz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@03ba61349bfb78acd78cc09475c093355c243043#glibc.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-glibc-locale-posix-2.39-r8",
+      "name": "glibc-locale-posix",
+      "versionInfo": "2.39-r8",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/glibc-locale-posix@2.39-r8?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/glibc@2.39?checksum=sha256%3Af77bd47cf8170c57365ae7bf86696c118adb3b120d3259c64c502d3dc1e2d926\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Flibc%2Fglibc-2.39.tar.xz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@03ba61349bfb78acd78cc09475c093355c243043#glibc.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-glibc-2.39-r8",
+      "name": "glibc",
+      "versionInfo": "2.39-r8",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/glibc@2.39-r8?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/glibc@2.39?checksum=sha256%3Af77bd47cf8170c57365ae7bf86696c118adb3b120d3259c64c502d3dc1e2d926\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Flibc%2Fglibc-2.39.tar.xz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@03ba61349bfb78acd78cc09475c093355c243043#glibc.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libgcc-13.3.0-r2",
+      "name": "libgcc",
+      "versionInfo": "13.3.0-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later WITH GCC-exception-3.1",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libgcc@13.3.0-r2?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/gcc@13.3.0?checksum=sha512%3Aed5f2f4c6ed2c796fcf2c93707159e9dbd3ddb1ba063d549804dd68cdabbb6d550985ae1c8465ae9a336cfe29274a6eb0f42e21924360574ebd8e5d5c7c9a801\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Fgcc%2Fgcc-13.3.0%2Fgcc-13.3.0.tar.xz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@f3dd34e5f4aa3c8d9eb4127da28eb10004a78826#gcc.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libstdcC43C43-13.3.0-r2",
+      "name": "libstdc++",
+      "versionInfo": "13.3.0-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later WITH GCC-exception-3.1",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libstdc%2B%2B@13.3.0-r2?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/gcc@13.3.0?checksum=sha512%3Aed5f2f4c6ed2c796fcf2c93707159e9dbd3ddb1ba063d549804dd68cdabbb6d550985ae1c8465ae9a336cfe29274a6eb0f42e21924360574ebd8e5d5c7c9a801\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Fgcc%2Fgcc-13.3.0%2Fgcc-13.3.0.tar.xz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@f3dd34e5f4aa3c8d9eb4127da28eb10004a78826#gcc.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-mpdecimal-4.0.0-r2",
+      "name": "mpdecimal",
+      "versionInfo": "4.0.0-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/mpdecimal@4.0.0-r2?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/mpdecimal@4.0.0?checksum=sha256%3A942445c3245b22730fd41a67a7c5c231d11cb1b9936b9c0f76334fb7d0b4468c\u0026download_url=https%3A%2F%2Fwww.bytereef.org%2Fsoftware%2Fmpdecimal%2Freleases%2Fmpdecimal-4.0.0.tar.gz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@1620fe25f76897247faa79e2d93416899712ca17#mpdecimal.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libbz2-1-1.0.8-r8",
+      "name": "libbz2-1",
+      "versionInfo": "1.0.8-r8",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libbz2-1@1.0.8-r8?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/bzip2@bzip2-1.0.8?vcs_url=git%2Bhttps%3A%2F%2Fsourceware.org%2Fgit%2Fbzip2.git%406a8690fc8d26c815e798c588f796eabe9d684cf0",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@1da3d0fe852e25c5cb9f585d3c87e26517abbb67#bzip2.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libexpat1-2.6.2-r1",
+      "name": "libexpat1",
+      "versionInfo": "2.6.2-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libexpat1@2.6.2-r1?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/expat@2.6.2?checksum=sha256%3A9c7c1b5dcbc3c237c500a8fb1493e14d9582146dd9b42aa8d3ffb856a3b927e0\u0026download_url=https%3A%2F%2Fdownloads.sourceforge.net%2Fproject%2Fexpat%2Fexpat%2F2.6.2%2Fexpat-2.6.2.tar.bz2",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@aca7b2e657523443c6e6e8be22fa653f31f18454#expat.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ncurses-terminfo-base-6.5C95p20240629-r0",
+      "name": "ncurses-terminfo-base",
+      "versionInfo": "6.5_p20240629-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/ncurses-terminfo-base@6.5_p20240629-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/ncurses@6.5_p20240629?checksum=sha512%3A2bc631d564d94a6a3218e3d2d4a69c84236e8ddbebeb407571b36f12495e3e8f27392498e365a7943ae605444db2f69d3591b382e10fdd446330f1c6d0374030\u0026download_url=https%3A%2F%2Finvisible-mirror.net%2Farchives%2Fncurses%2Fcurrent%2Fncurses-6.5-20240629.tgz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@1d75cdad12c9a85da371f1a98ea350a669a4d003#ncurses.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ncurses-6.5C95p20240629-r0",
+      "name": "ncurses",
+      "versionInfo": "6.5_p20240629-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/ncurses@6.5_p20240629-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/ncurses@6.5_p20240629?checksum=sha512%3A2bc631d564d94a6a3218e3d2d4a69c84236e8ddbebeb407571b36f12495e3e8f27392498e365a7943ae605444db2f69d3591b382e10fdd446330f1c6d0374030\u0026download_url=https%3A%2F%2Finvisible-mirror.net%2Farchives%2Fncurses%2Fcurrent%2Fncurses-6.5-20240629.tgz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@1d75cdad12c9a85da371f1a98ea350a669a4d003#ncurses.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-gdbm-1.24-r0",
+      "name": "gdbm",
+      "versionInfo": "1.24-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/gdbm@1.24-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/gdbm@1.24?checksum=sha256%3A695e9827fdf763513f133910bc7e6cfdb9187943a4fec943e57449723d2b8dbf\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Fgdbm%2Fgdbm-1.24.tar.gz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@3ec85a15aeaba2e80a020a895770846d2afbe359#gdbm.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-readline-8.2-r7",
+      "name": "readline",
+      "versionInfo": "8.2-r7",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/readline@8.2-r7?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/readline@readline-8.2?vcs_url=git%2Bhttps%3A%2F%2Fgit.savannah.gnu.org%2Fgit%2Freadline.git%40f7a382fd09319b20ef4435b9b554183b605468c1",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@266999ce163700cdd9b1e7b5071fb83ac31f5c74#readline.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libffi-3.4.6-r3",
+      "name": "libffi",
+      "versionInfo": "3.4.6-r3",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libffi@3.4.6-r3?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/libffi/libffi.git@v3.4.6",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/libffi/libffi.git@3d0ce1e6fcf19f853894862abcbac0ae78a7be60",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@c14f53392cc07da494b0366ca794ab1f47a8112a#libffi.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-zlib-1.3.1-r4",
+      "name": "zlib",
+      "versionInfo": "1.3.1-r4",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MPL-2.0 AND MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/zlib@1.3.1-r4?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/madler/zlib.git@v1.3.1",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/madler/zlib.git@51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@71d8c809791db5fb95781c7c1eab528930109f92#zlib.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-xz-5.6.2-r0",
+      "name": "xz",
+      "versionInfo": "5.6.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/xz@5.6.2-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/xz@5.6.2?checksum=sha256%3A8bfd20c0e1d86f0402f2497cfa71c6ab62d4cd35fd704276e3140bfb71414519\u0026download_url=https%3A%2F%2Fgithub.com%2Ftukaani-project%2Fxz%2Freleases%2Fdownload%2Fv5.6.2%2Fxz-5.6.2.tar.gz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@055ade7bead9f4b902d89f7bd94a75559e41351b#xz.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sqlite-libs-3.45.1-r1",
+      "name": "sqlite-libs",
+      "versionInfo": "3.45.1-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "blessing",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/sqlite-libs@3.45.1-r1?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/sqlite@3.45.1?checksum=sha256%3Acd9c27841b7a5932c9897651e20b86c701dd740556989b01ca596fcfa3d49a0a\u0026download_url=https%3A%2F%2Fwww.sqlite.org%2F2024%2Fsqlite-autoconf-3450100.tar.gz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@dce9398aef41e3569193e8a707fa1cf3518df51d#sqlite.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libxcrypt-4.4.36-r7",
+      "name": "libxcrypt",
+      "versionInfo": "4.4.36-r7",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libxcrypt@4.4.36-r7?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/besser82/libxcrypt@v4.4.36",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/besser82/libxcrypt@f531a36aa916a22ef2ce7d270ba381e264250cbf",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@47793bfd95deb14489d0a0d187ff9abbd31f970a#libxcrypt.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libcrypt1-2.39-r8",
+      "name": "libcrypt1",
+      "versionInfo": "2.39-r8",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "LGPL-2.1-or-later",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libcrypt1@2.39-r8?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/glibc@2.39?checksum=sha256%3Af77bd47cf8170c57365ae7bf86696c118adb3b120d3259c64c502d3dc1e2d926\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Flibc%2Fglibc-2.39.tar.xz",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@03ba61349bfb78acd78cc09475c093355c243043#glibc.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libcrypto3-3.3.1-r5",
+      "name": "libcrypto3",
+      "versionInfo": "3.3.1-r5",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "Apache-2.0",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libcrypto3@3.3.1-r5?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/openssl/openssl.git@openssl-3.3.1",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/openssl/openssl.git@db2ac4f6ebd8f3d7b2a60882992fbea1269114e2",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@ea0c641f90c35cc98770ade1f0bed36866119fac#openssl.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-libssl3-3.3.1-r5",
+      "name": "libssl3",
+      "versionInfo": "3.3.1-r5",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "Apache-2.0",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/libssl3@3.3.1-r5?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/openssl/openssl.git@openssl-3.3.1",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/openssl/openssl.git@db2ac4f6ebd8f3d7b2a60882992fbea1269114e2",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@ea0c641f90c35cc98770ade1f0bed36866119fac#openssl.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-python-3.12-base-3.12.5-r0",
+      "name": "python-3.12-base",
+      "versionInfo": "3.12.5-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "PSF-2.0",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/python-3.12-base@3.12.5-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/python/cpython.git@v3.12.5",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/python/cpython.git@ff3bc82f7c9882c27aad597aac79355da7257186",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@9e8670e35ed99b9fb50fb5c9599392a546a11b25#python-3.12.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-py3.12-setuptools-72.1.0-r0",
+      "name": "py3.12-setuptools",
+      "versionInfo": "72.1.0-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/py3.12-setuptools@72.1.0-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/pypa/setuptools.git@v72.1.0",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/pypa/setuptools.git@441799f8b45a1a01c608db49333403db1b0d7100",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@9d7866a1d59d72d68233fa8243d6e1d4f94efa34#py3-setuptools.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-py3.12-pip-base-24.2-r0",
+      "name": "py3.12-pip-base",
+      "versionInfo": "24.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/py3.12-pip-base@24.2-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/pypa/pip@24.2",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/pypa/pip@97146c7f4cd85551f3dc261830a57f304e43c181",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@bd8227a5beee85ba62278f7abbeed0bfec4a25e7#py3-pip.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-py3.12-pip-24.2-r0",
+      "name": "py3.12-pip",
+      "versionInfo": "24.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/py3.12-pip@24.2-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/pypa/pip@24.2",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/pypa/pip@97146c7f4cd85551f3dc261830a57f304e43c181",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@bd8227a5beee85ba62278f7abbeed0bfec4a25e7#py3-pip.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-python-3.12-3.12.5-r0",
+      "name": "python-3.12",
+      "versionInfo": "3.12.5-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "PSF-2.0",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/python-3.12@3.12.5-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/python/cpython.git@v3.12.5",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/python/cpython.git@ff3bc82f7c9882c27aad597aac79355da7257186",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@9e8670e35ed99b9fb50fb5c9599392a546a11b25#python-3.12.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-wolfi-keys-1-r8",
+      "name": "wolfi-keys",
+      "versionInfo": "1-r8",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/wolfi-keys@1-r8?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@47793bfd95deb14489d0a0d187ff9abbd31f970a#wolfi-keys.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-apk-tools-2.14.4-r0",
+      "name": "apk-tools",
+      "versionInfo": "2.14.4-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-only",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/apk-tools@2.14.4-r0?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/apk-tools@v2.14.4?vcs_url=git%2Bhttps%3A%2F%2Fgitlab.alpinelinux.org%2Falpine%2Fapk-tools.git%40de114558a5d8fa15350b1b3d440712fab6bae817",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@dd9d55c9154e78ff5d0d2eb513de2a198ef7f00f#apk-tools.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-busybox-1.36.1-r10",
+      "name": "busybox",
+      "versionInfo": "1.36.1-r10",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "GPL-2.0-only",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/busybox@1.36.1-r10?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:generic/busybox@1.36.1?checksum=sha256%3Ab8cc24c9574d809e7279c3be349795c5d5ceb6fdf19ca709f80cde50e47de314\u0026download_url=https%3A%2F%2Fdistfiles.alpinelinux.org%2Fdistfiles%2Fedge%2Fbusybox-1.36.1.tar.bz2",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@47793bfd95deb14489d0a0d187ff9abbd31f970a#busybox.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-wolfi-base-1-r6",
+      "name": "wolfi-base",
+      "versionInfo": "1-r6",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: Wolfi",
+      "supplier": "Organization: Wolfi",
+      "copyrightText": "\n",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:apk/wolfi/wolfi-base@1-r6?arch=x86_64",
+          "referenceType": "purl"
+        },
+        {
+          "referenceCategory": "PACKAGE_MANAGER",
+          "referenceLocator": "pkg:github/wolfi-dev/os@47793bfd95deb14489d0a0d187ff9abbd31f970a#wolfi-base.yaml",
+          "referenceType": "purl"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68"
+    }
+  ]
+}
