@@ -49,7 +49,7 @@ jobs:
             echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"
         
       - name: Construir e enviar a imagem Docker
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         id: build-and-push
         with:
           context: ./
