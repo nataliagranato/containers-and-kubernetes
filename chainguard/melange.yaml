@@ -31,6 +31,12 @@ environment:
 pipeline:
 - name: Build Python application
   runs: |
+    set -e
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
+    deactivate
+- name: Package application
+  runs: |
+    mkdir -p /pkg/usr/local/bin
+    cp -r * /pkg/usr/local/bin/
