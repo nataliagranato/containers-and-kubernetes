@@ -1,9 +1,9 @@
 {
   "SPDXID": "SPDXRef-DOCUMENT",
-  "name": "sbom-sha256:6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68",
+  "name": "sbom-sha256:0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378",
   "spdxVersion": "SPDX-2.3",
   "creationInfo": {
-    "created": "2024-08-08T19:51:14Z",
+    "created": "2024-07-22T18:15:08Z",
     "creators": [
       "Tool: apko (v0.17.0-dirty)",
       "Organization: Chainguard, Inc"
@@ -13,1007 +13,1119 @@
   "dataLicense": "CC0-1.0",
   "documentNamespace": "https://spdx.org/spdxdocs/apko/",
   "documentDescribes": [
-    "SPDXRef-Package-sha256-1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0"
+    "SPDXRef-Package-sha256-48f04a081b9b257c5ba6fd1fc07b3d04abd2a87859338b999f98c8b695ee371d"
   ],
   "packages": [
     {
-      "SPDXID": "SPDXRef-Package-sha256-1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
-      "name": "sha256:1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
-      "versionInfo": "sha256:1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "SPDXID": "SPDXRef-Package-sha256-48f04a081b9b257c5ba6fd1fc07b3d04abd2a87859338b999f98c8b695ee371d",
+      "name": "sha256:48f04a081b9b257c5ba6fd1fc07b3d04abd2a87859338b999f98c8b695ee371d",
+      "versionInfo": "sha256:48f04a081b9b257c5ba6fd1fc07b3d04abd2a87859338b999f98c8b695ee371d",
       "filesAnalyzed": false,
       "description": "apko container image",
       "downloadLocation": "NOASSERTION",
-      "supplier": "Organization: Wolfi",
+      "supplier": "Organization: Alpine Linux",
       "primaryPackagePurpose": "CONTAINER",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0"
+          "checksumValue": "48f04a081b9b257c5ba6fd1fc07b3d04abd2a87859338b999f98c8b695ee371d"
         }
       ],
       "externalRefs": [
         {
           "referenceCategory": "PACKAGE-MANAGER",
-          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3A1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3A48f04a081b9b257c5ba6fd1fc07b3d04abd2a87859338b999f98c8b695ee371d?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-sha256-6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68",
-      "name": "sha256:6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68",
-      "versionInfo": "20230201",
+      "SPDXID": "SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378",
+      "name": "sha256:0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378",
+      "versionInfo": "3.18.8",
       "filesAnalyzed": false,
       "description": "apko operating system layer",
       "downloadLocation": "NOASSERTION",
-      "supplier": "Organization: Wolfi",
+      "supplier": "Organization: Alpine Linux",
       "externalRefs": [
         {
           "referenceCategory": "PACKAGE-MANAGER",
-          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3A6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip\u0026os=linux",
+          "referenceLocator": "pkg:oci/giropops-senhas@sha256%3A0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip\u0026os=linux",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-ca-certificates-bundle-20240705-r0",
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-alpine-baselayout-data-3.4.3-r1",
+      "name": "alpine-baselayout-data",
+      "versionInfo": "3.4.3-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Alpine base dir structure and init scripts",
+      "downloadLocation": "https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "602007ee374ed96f35e9bf39b1487d67c6afe027"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/alpine-baselayout-data@3.4.3-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-musl-1.2.4-r2",
+      "name": "musl",
+      "versionInfo": "1.2.4-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "the musl c library (libc) implementation",
+      "downloadLocation": "https://musl.libc.org/",
+      "originator": "Person: Timo Teräs \u003ctimo.teras@iki.fi\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "a1db4862d2b238283ab2e17f703698a7280bee1c"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/musl@1.2.4-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-busybox-1.36.1-r7",
+      "name": "busybox",
+      "versionInfo": "1.36.1-r7",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Size optimized toolbox of many common UNIX utilities",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "89eac62a5df7018d7bc99768f1837ecfc35e30f8"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/busybox@1.36.1-r7?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-busybox-binsh-1.36.1-r7",
+      "name": "busybox-binsh",
+      "versionInfo": "1.36.1-r7",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "busybox ash /bin/sh",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "6c284c629355780f938e01e0df92299509bcfd8e"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/busybox-binsh@1.36.1-r7?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-alpine-baselayout-3.4.3-r1",
+      "name": "alpine-baselayout",
+      "versionInfo": "3.4.3-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Alpine base dir structure and init scripts",
+      "downloadLocation": "https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "cf0bca32762cd5be9974f4c127467b0f93f78f20"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/alpine-baselayout@3.4.3-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libcap2-2.69-r0",
+      "name": "libcap2",
+      "versionInfo": "2.69-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause OR GPL-2.0-only",
+      "description": "POSIX 1003.1e capabilities (libraries)",
+      "downloadLocation": "https://sites.google.com/site/fullycapable/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "c76ac833cf9e3d6239cbda3554a30468947433b1"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libcap2@2.69-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-busybox-ifupdown-1.36.1-r7",
+      "name": "busybox-ifupdown",
+      "versionInfo": "1.36.1-r7",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "placeholder package for busybox ifupdown",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "1c52aa6e1313feaeee8ff29ade0d9143bca2e19f"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/busybox-ifupdown@1.36.1-r7?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-openrc-0.48-r0",
+      "name": "openrc",
+      "versionInfo": "0.48-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause",
+      "description": "OpenRC manages the services, startup and shutdown of a host",
+      "downloadLocation": "https://github.com/OpenRC/openrc",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "3d98321d236d411c77662f40cefed659c0955940"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/openrc@0.48-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-alpine-conf-3.16.2-r0",
+      "name": "alpine-conf",
+      "versionInfo": "3.16.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Alpine configuration management scripts",
+      "downloadLocation": "https://git.alpinelinux.org/alpine-conf/about",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "ea1a0bdcc8cfda2ce232d25f82b1ab1a4858d59c"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/alpine-conf@3.16.2-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-alpine-keys-2.4-r1",
+      "name": "alpine-keys",
+      "versionInfo": "2.4-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Public keys for Alpine Linux packages",
+      "downloadLocation": "https://alpinelinux.org",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "ec3a3d5ef4c7a168d09516097bb3219ca77c1534"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-alpine-release-3.18.8-r0",
+      "name": "alpine-release",
+      "versionInfo": "3.18.8-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Alpine release data",
+      "downloadLocation": "https://alpinelinux.org",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "a054b9c9ca9c3cb2196712a44047fc1d8c679b7f"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/alpine-release@3.18.8-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-ca-certificates-bundle-20240226-r0",
       "name": "ca-certificates-bundle",
-      "versionInfo": "20240705-r0",
+      "versionInfo": "20240226-r0",
       "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MPL-2.0 AND MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
+      "licenseConcluded": "MPL-2.0 AND MIT",
+      "description": "Pre generated bundle of Mozilla certificates",
+      "downloadLocation": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9a6e30a7cf5772a540237c4e98c616f8811023e7"
+        }
+      ],
       "externalRefs": [
         {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/ca-certificates-bundle@20240705-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/ca-certificates@20240705?vcs_url=git%2Bhttps%3A%2F%2Fgitlab.alpinelinux.org%2Falpine%2Fca-certificates%40ff907f8be39b0ecec68a99a2bd0f235d1782b1d6",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@29dabcaa9232d7814e05f5e311ca6562ab42efda#ca-certificates.yaml",
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/ca-certificates-bundle@20240226-r0?arch=x86_64",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-py3-pip-wheel-24.2-r0",
-      "name": "py3-pip-wheel",
-      "versionInfo": "24.2-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/py3-pip-wheel@24.2-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/py3-pip-wheel@24.2?checksum=sha256%3A2cd581cf58ab7fcfca4ce8efa6dcacd0de5bf8d0a3eb9ec927e07405f4d9e2a2\u0026download_url=https%3A%2F%2Ffiles.pythonhosted.org%2Fpackages%2Fpy3%2Fp%2Fpip%2Fpip-24.2-py3-none-any.whl",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@0140e956c2c4cd48c8f52f08d922dffda22c424a#py3-pip-wheel.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-wolfi-baselayout-20230201-r15",
-      "name": "wolfi-baselayout",
-      "versionInfo": "20230201-r15",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/wolfi-baselayout@20230201-r15?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@a210624b093af744aa09b69372345cf3356ae18b#wolfi-baselayout.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-ld-linux-2.39-r8",
-      "name": "ld-linux",
-      "versionInfo": "2.39-r8",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "LGPL-2.1-or-later",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/ld-linux@2.39-r8?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/glibc@2.39?checksum=sha256%3Af77bd47cf8170c57365ae7bf86696c118adb3b120d3259c64c502d3dc1e2d926\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Flibc%2Fglibc-2.39.tar.xz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@03ba61349bfb78acd78cc09475c093355c243043#glibc.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-glibc-locale-posix-2.39-r8",
-      "name": "glibc-locale-posix",
-      "versionInfo": "2.39-r8",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "LGPL-2.1-or-later",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/glibc-locale-posix@2.39-r8?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/glibc@2.39?checksum=sha256%3Af77bd47cf8170c57365ae7bf86696c118adb3b120d3259c64c502d3dc1e2d926\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Flibc%2Fglibc-2.39.tar.xz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@03ba61349bfb78acd78cc09475c093355c243043#glibc.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-glibc-2.39-r8",
-      "name": "glibc",
-      "versionInfo": "2.39-r8",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "LGPL-2.1-or-later",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/glibc@2.39-r8?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/glibc@2.39?checksum=sha256%3Af77bd47cf8170c57365ae7bf86696c118adb3b120d3259c64c502d3dc1e2d926\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Flibc%2Fglibc-2.39.tar.xz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@03ba61349bfb78acd78cc09475c093355c243043#glibc.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-libgcc-13.3.0-r2",
-      "name": "libgcc",
-      "versionInfo": "13.3.0-r2",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "GPL-3.0-or-later WITH GCC-exception-3.1",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libgcc@13.3.0-r2?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/gcc@13.3.0?checksum=sha512%3Aed5f2f4c6ed2c796fcf2c93707159e9dbd3ddb1ba063d549804dd68cdabbb6d550985ae1c8465ae9a336cfe29274a6eb0f42e21924360574ebd8e5d5c7c9a801\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Fgcc%2Fgcc-13.3.0%2Fgcc-13.3.0.tar.xz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@f3dd34e5f4aa3c8d9eb4127da28eb10004a78826#gcc.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-libstdcC43C43-13.3.0-r2",
-      "name": "libstdc++",
-      "versionInfo": "13.3.0-r2",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "GPL-3.0-or-later WITH GCC-exception-3.1",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libstdc%2B%2B@13.3.0-r2?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/gcc@13.3.0?checksum=sha512%3Aed5f2f4c6ed2c796fcf2c93707159e9dbd3ddb1ba063d549804dd68cdabbb6d550985ae1c8465ae9a336cfe29274a6eb0f42e21924360574ebd8e5d5c7c9a801\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Fgcc%2Fgcc-13.3.0%2Fgcc-13.3.0.tar.xz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@f3dd34e5f4aa3c8d9eb4127da28eb10004a78826#gcc.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-mpdecimal-4.0.0-r2",
-      "name": "mpdecimal",
-      "versionInfo": "4.0.0-r2",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/mpdecimal@4.0.0-r2?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/mpdecimal@4.0.0?checksum=sha256%3A942445c3245b22730fd41a67a7c5c231d11cb1b9936b9c0f76334fb7d0b4468c\u0026download_url=https%3A%2F%2Fwww.bytereef.org%2Fsoftware%2Fmpdecimal%2Freleases%2Fmpdecimal-4.0.0.tar.gz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@1620fe25f76897247faa79e2d93416899712ca17#mpdecimal.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-libbz2-1-1.0.8-r8",
-      "name": "libbz2-1",
-      "versionInfo": "1.0.8-r8",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MPL-2.0 AND MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libbz2-1@1.0.8-r8?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/bzip2@bzip2-1.0.8?vcs_url=git%2Bhttps%3A%2F%2Fsourceware.org%2Fgit%2Fbzip2.git%406a8690fc8d26c815e798c588f796eabe9d684cf0",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@1da3d0fe852e25c5cb9f585d3c87e26517abbb67#bzip2.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-libexpat1-2.6.2-r1",
-      "name": "libexpat1",
-      "versionInfo": "2.6.2-r1",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libexpat1@2.6.2-r1?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/expat@2.6.2?checksum=sha256%3A9c7c1b5dcbc3c237c500a8fb1493e14d9582146dd9b42aa8d3ffb856a3b927e0\u0026download_url=https%3A%2F%2Fdownloads.sourceforge.net%2Fproject%2Fexpat%2Fexpat%2F2.6.2%2Fexpat-2.6.2.tar.bz2",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@aca7b2e657523443c6e6e8be22fa653f31f18454#expat.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-ncurses-terminfo-base-6.5C95p20240629-r0",
-      "name": "ncurses-terminfo-base",
-      "versionInfo": "6.5_p20240629-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/ncurses-terminfo-base@6.5_p20240629-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/ncurses@6.5_p20240629?checksum=sha512%3A2bc631d564d94a6a3218e3d2d4a69c84236e8ddbebeb407571b36f12495e3e8f27392498e365a7943ae605444db2f69d3591b382e10fdd446330f1c6d0374030\u0026download_url=https%3A%2F%2Finvisible-mirror.net%2Farchives%2Fncurses%2Fcurrent%2Fncurses-6.5-20240629.tgz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@1d75cdad12c9a85da371f1a98ea350a669a4d003#ncurses.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-ncurses-6.5C95p20240629-r0",
-      "name": "ncurses",
-      "versionInfo": "6.5_p20240629-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/ncurses@6.5_p20240629-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/ncurses@6.5_p20240629?checksum=sha512%3A2bc631d564d94a6a3218e3d2d4a69c84236e8ddbebeb407571b36f12495e3e8f27392498e365a7943ae605444db2f69d3591b382e10fdd446330f1c6d0374030\u0026download_url=https%3A%2F%2Finvisible-mirror.net%2Farchives%2Fncurses%2Fcurrent%2Fncurses-6.5-20240629.tgz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@1d75cdad12c9a85da371f1a98ea350a669a4d003#ncurses.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-gdbm-1.24-r0",
-      "name": "gdbm",
-      "versionInfo": "1.24-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "GPL-3.0-or-later",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/gdbm@1.24-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/gdbm@1.24?checksum=sha256%3A695e9827fdf763513f133910bc7e6cfdb9187943a4fec943e57449723d2b8dbf\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Fgdbm%2Fgdbm-1.24.tar.gz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@3ec85a15aeaba2e80a020a895770846d2afbe359#gdbm.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-readline-8.2-r7",
-      "name": "readline",
-      "versionInfo": "8.2-r7",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "GPL-3.0-or-later",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/readline@8.2-r7?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/readline@readline-8.2?vcs_url=git%2Bhttps%3A%2F%2Fgit.savannah.gnu.org%2Fgit%2Freadline.git%40f7a382fd09319b20ef4435b9b554183b605468c1",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@266999ce163700cdd9b1e7b5071fb83ac31f5c74#readline.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-libffi-3.4.6-r3",
-      "name": "libffi",
-      "versionInfo": "3.4.6-r3",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libffi@3.4.6-r3?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/libffi/libffi.git@v3.4.6",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/libffi/libffi.git@3d0ce1e6fcf19f853894862abcbac0ae78a7be60",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@c14f53392cc07da494b0366ca794ab1f47a8112a#libffi.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-zlib-1.3.1-r4",
-      "name": "zlib",
-      "versionInfo": "1.3.1-r4",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MPL-2.0 AND MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/zlib@1.3.1-r4?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/madler/zlib.git@v1.3.1",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/madler/zlib.git@51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@71d8c809791db5fb95781c7c1eab528930109f92#zlib.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-xz-5.6.2-r0",
-      "name": "xz",
-      "versionInfo": "5.6.2-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "GPL-3.0-or-later",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/xz@5.6.2-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/xz@5.6.2?checksum=sha256%3A8bfd20c0e1d86f0402f2497cfa71c6ab62d4cd35fd704276e3140bfb71414519\u0026download_url=https%3A%2F%2Fgithub.com%2Ftukaani-project%2Fxz%2Freleases%2Fdownload%2Fv5.6.2%2Fxz-5.6.2.tar.gz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@055ade7bead9f4b902d89f7bd94a75559e41351b#xz.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-sqlite-libs-3.45.1-r1",
-      "name": "sqlite-libs",
-      "versionInfo": "3.45.1-r1",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "blessing",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/sqlite-libs@3.45.1-r1?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/sqlite@3.45.1?checksum=sha256%3Acd9c27841b7a5932c9897651e20b86c701dd740556989b01ca596fcfa3d49a0a\u0026download_url=https%3A%2F%2Fwww.sqlite.org%2F2024%2Fsqlite-autoconf-3450100.tar.gz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@dce9398aef41e3569193e8a707fa1cf3518df51d#sqlite.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-libxcrypt-4.4.36-r7",
-      "name": "libxcrypt",
-      "versionInfo": "4.4.36-r7",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "GPL-2.0-or-later AND LGPL-2.1-or-later",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libxcrypt@4.4.36-r7?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/besser82/libxcrypt@v4.4.36",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/besser82/libxcrypt@f531a36aa916a22ef2ce7d270ba381e264250cbf",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@47793bfd95deb14489d0a0d187ff9abbd31f970a#libxcrypt.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-libcrypt1-2.39-r8",
-      "name": "libcrypt1",
-      "versionInfo": "2.39-r8",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "LGPL-2.1-or-later",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libcrypt1@2.39-r8?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/glibc@2.39?checksum=sha256%3Af77bd47cf8170c57365ae7bf86696c118adb3b120d3259c64c502d3dc1e2d926\u0026download_url=https%3A%2F%2Fftp.gnu.org%2Fgnu%2Flibc%2Fglibc-2.39.tar.xz",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@03ba61349bfb78acd78cc09475c093355c243043#glibc.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-libcrypto3-3.3.1-r5",
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libcrypto3-3.1.6-r0",
       "name": "libcrypto3",
-      "versionInfo": "3.3.1-r5",
+      "versionInfo": "3.1.6-r0",
       "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "Apache-2.0",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
+      "licenseConcluded": "Apache-2.0",
+      "description": "Crypto library from openssl",
+      "downloadLocation": "https://www.openssl.org/",
+      "originator": "Person: Ariadne Conill \u003cariadne@dereferenced.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "36a6a889e22759140819b5e67b8280aed27a4464"
+        }
+      ],
       "externalRefs": [
         {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libcrypto3@3.3.1-r5?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/openssl/openssl.git@openssl-3.3.1",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/openssl/openssl.git@db2ac4f6ebd8f3d7b2a60882992fbea1269114e2",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@ea0c641f90c35cc98770ade1f0bed36866119fac#openssl.yaml",
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libcrypto3@3.1.6-r0?arch=x86_64",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-libssl3-3.3.1-r5",
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libssl3-3.1.6-r0",
       "name": "libssl3",
-      "versionInfo": "3.3.1-r5",
+      "versionInfo": "3.1.6-r0",
       "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "Apache-2.0",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
+      "licenseConcluded": "Apache-2.0",
+      "description": "SSL shared libraries",
+      "downloadLocation": "https://www.openssl.org/",
+      "originator": "Person: Ariadne Conill \u003cariadne@dereferenced.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "6c82698283170d749b52ae8a6506153f56c94817"
+        }
+      ],
       "externalRefs": [
         {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/libssl3@3.3.1-r5?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/openssl/openssl.git@openssl-3.3.1",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/openssl/openssl.git@db2ac4f6ebd8f3d7b2a60882992fbea1269114e2",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@ea0c641f90c35cc98770ade1f0bed36866119fac#openssl.yaml",
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libssl3@3.1.6-r0?arch=x86_64",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-python-3.12-base-3.12.5-r0",
-      "name": "python-3.12-base",
-      "versionInfo": "3.12.5-r0",
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-zlib-1.2.13-r1",
+      "name": "zlib",
+      "versionInfo": "1.2.13-r1",
       "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "PSF-2.0",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
+      "licenseConcluded": "Zlib",
+      "description": "A compression/decompression Library",
+      "downloadLocation": "https://zlib.net/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "2656e848992b378aa40dca24af8cde9e97161174"
+        }
+      ],
       "externalRefs": [
         {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/python-3.12-base@3.12.5-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/python/cpython.git@v3.12.5",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/python/cpython.git@ff3bc82f7c9882c27aad597aac79355da7257186",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@9e8670e35ed99b9fb50fb5c9599392a546a11b25#python-3.12.yaml",
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/zlib@1.2.13-r1?arch=x86_64",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-py3.12-setuptools-72.1.0-r0",
-      "name": "py3.12-setuptools",
-      "versionInfo": "72.1.0-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/py3.12-setuptools@72.1.0-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/pypa/setuptools.git@v72.1.0",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/pypa/setuptools.git@441799f8b45a1a01c608db49333403db1b0d7100",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@9d7866a1d59d72d68233fa8243d6e1d4f94efa34#py3-setuptools.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-py3.12-pip-base-24.2-r0",
-      "name": "py3.12-pip-base",
-      "versionInfo": "24.2-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/py3.12-pip-base@24.2-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/pypa/pip@24.2",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/pypa/pip@97146c7f4cd85551f3dc261830a57f304e43c181",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@bd8227a5beee85ba62278f7abbeed0bfec4a25e7#py3-pip.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-py3.12-pip-24.2-r0",
-      "name": "py3.12-pip",
-      "versionInfo": "24.2-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/py3.12-pip@24.2-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/pypa/pip@24.2",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/pypa/pip@97146c7f4cd85551f3dc261830a57f304e43c181",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@bd8227a5beee85ba62278f7abbeed0bfec4a25e7#py3-pip.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-python-3.12-3.12.5-r0",
-      "name": "python-3.12",
-      "versionInfo": "3.12.5-r0",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "PSF-2.0",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/python-3.12@3.12.5-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/python/cpython.git@v3.12.5",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/python/cpython.git@ff3bc82f7c9882c27aad597aac79355da7257186",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@9e8670e35ed99b9fb50fb5c9599392a546a11b25#python-3.12.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-wolfi-keys-1-r8",
-      "name": "wolfi-keys",
-      "versionInfo": "1-r8",
-      "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
-      "externalRefs": [
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/wolfi-keys@1-r8?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@47793bfd95deb14489d0a0d187ff9abbd31f970a#wolfi-keys.yaml",
-          "referenceType": "purl"
-        }
-      ]
-    },
-    {
-      "SPDXID": "SPDXRef-Package-apk-tools-2.14.4-r0",
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-apk-tools-2.14.4-r0",
       "name": "apk-tools",
       "versionInfo": "2.14.4-r0",
       "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "GPL-2.0-only",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Alpine Package Keeper - package manager for alpine",
+      "downloadLocation": "https://gitlab.alpinelinux.org/alpine/apk-tools",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "063a74de9b26b30bebf1b18689c80a8cf8a4b25d"
+        }
+      ],
       "externalRefs": [
         {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/apk-tools@2.14.4-r0?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/apk-tools@v2.14.4?vcs_url=git%2Bhttps%3A%2F%2Fgitlab.alpinelinux.org%2Falpine%2Fapk-tools.git%40de114558a5d8fa15350b1b3d440712fab6bae817",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@dd9d55c9154e78ff5d0d2eb513de2a198ef7f00f#apk-tools.yaml",
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/apk-tools@2.14.4-r0?arch=x86_64",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-busybox-1.36.1-r10",
-      "name": "busybox",
-      "versionInfo": "1.36.1-r10",
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-mdev-conf-4.5-r0",
+      "name": "mdev-conf",
+      "versionInfo": "4.5-r0",
       "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "GPL-2.0-only",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
+      "licenseConcluded": "MIT",
+      "description": "Configuration files for mdev and mdevd",
+      "downloadLocation": "https://gitlab.alpinelinux.org/alpine/mdev-conf",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "2af9452f6a96468202ab6a021ea116a871218c39"
+        }
+      ],
       "externalRefs": [
         {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/busybox@1.36.1-r10?arch=x86_64",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:generic/busybox@1.36.1?checksum=sha256%3Ab8cc24c9574d809e7279c3be349795c5d5ceb6fdf19ca709f80cde50e47de314\u0026download_url=https%3A%2F%2Fdistfiles.alpinelinux.org%2Fdistfiles%2Fedge%2Fbusybox-1.36.1.tar.bz2",
-          "referenceType": "purl"
-        },
-        {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@47793bfd95deb14489d0a0d187ff9abbd31f970a#busybox.yaml",
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/mdev-conf@4.5-r0?arch=x86_64",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-wolfi-base-1-r6",
-      "name": "wolfi-base",
-      "versionInfo": "1-r6",
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-busybox-mdev-openrc-1.36.1-r7",
+      "name": "busybox-mdev-openrc",
+      "versionInfo": "1.36.1-r7",
       "filesAnalyzed": false,
-      "licenseConcluded": "NOASSERTION",
-      "licenseDeclared": "MIT",
-      "downloadLocation": "NOASSERTION",
-      "originator": "Organization: Wolfi",
-      "supplier": "Organization: Wolfi",
-      "copyrightText": "\n",
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Size optimized toolbox of many common UNIX utilities",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "d7833a1afec3b3ff119313d0613b7561fe18a541"
+        }
+      ],
       "externalRefs": [
         {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:apk/wolfi/wolfi-base@1-r6?arch=x86_64",
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/busybox-mdev-openrc@1.36.1-r7?arch=x86_64",
           "referenceType": "purl"
-        },
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-busybox-openrc-1.36.1-r7",
+      "name": "busybox-openrc",
+      "versionInfo": "1.36.1-r7",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Size optimized toolbox of many common UNIX utilities",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
         {
-          "referenceCategory": "PACKAGE_MANAGER",
-          "referenceLocator": "pkg:github/wolfi-dev/os@47793bfd95deb14489d0a0d187ff9abbd31f970a#wolfi-base.yaml",
+          "algorithm": "SHA1",
+          "checksumValue": "c333a6e70447a1656f59ff32412553163679ee10"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/busybox-openrc@1.36.1-r7?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-busybox-suid-1.36.1-r7",
+      "name": "busybox-suid",
+      "versionInfo": "1.36.1-r7",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "suid binaries of Busybox",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "cbe8f375f4d40a58cfe2383ac0ce77b324237a06"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/busybox-suid@1.36.1-r7?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-scanelf-1.3.7-r1",
+      "name": "scanelf",
+      "versionInfo": "1.3.7-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Scan ELF binaries for stuff",
+      "downloadLocation": "https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "e27abda38faea3635a2db4d50d007751ea280b43"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/scanelf@1.3.7-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-musl-utils-1.2.4-r2",
+      "name": "musl-utils",
+      "versionInfo": "1.2.4-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT AND BSD-2-Clause AND GPL-2.0-or-later",
+      "description": "the musl c library (libc) implementation",
+      "downloadLocation": "https://musl.libc.org/",
+      "originator": "Person: Timo Teräs \u003ctimo.teras@iki.fi\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "e7d3d748b5d59b030103457f166beb049a1ba5a9"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/musl-utils@1.2.4-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libc-utils-0.7.2-r5",
+      "name": "libc-utils",
+      "versionInfo": "0.7.2-r5",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause AND BSD-3-Clause",
+      "description": "Meta package to pull in correct libc",
+      "downloadLocation": "https://alpinelinux.org",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "2e59dafeb8bca0786540846c686f121ae8348a42"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libc-utils@0.7.2-r5?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-sslC95client-1.36.1-r7",
+      "name": "ssl_client",
+      "versionInfo": "1.36.1-r7",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "EXternal ssl_client for busybox wget",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "c78cc63e56e367fed9b18300b593da1964e86ff9"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/ssl_client@1.36.1-r7?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-alpine-base-3.18.8-r0",
+      "name": "alpine-base",
+      "versionInfo": "3.18.8-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Meta package for minimal alpine base",
+      "downloadLocation": "https://alpinelinux.org",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "fbc91d0d99a7b112c731a4c51432e9d41754eac3"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/alpine-base@3.18.8-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libbz2-1.0.8-r5",
+      "name": "libbz2",
+      "versionInfo": "1.0.8-r5",
+      "filesAnalyzed": false,
+      "licenseConcluded": "bzip2-1.0.6",
+      "description": "Shared library for bz2",
+      "downloadLocation": "https://sourceware.org/bzip2/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "bf5de05a62c4841e3027a8b44bbed94c89124835"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libbz2@1.0.8-r5?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libexpat-2.6.2-r0",
+      "name": "libexpat",
+      "versionInfo": "2.6.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "XML Parser library written in C (libraries)",
+      "downloadLocation": "https://libexpat.github.io/",
+      "originator": "Person: Carlo Landmeter \u003cclandmeter@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "512efade20542ac8f5f1bd7bb59ac0f25e9ea237"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libexpat@2.6.2-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libffi-3.4.4-r2",
+      "name": "libffi",
+      "versionInfo": "3.4.4-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "portable, high level programming interface to various calling conventions.",
+      "downloadLocation": "https://sourceware.org/libffi/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "c6d89cb4b6f62a006d8e5ea70f299c521b55672f"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libffi@3.4.4-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-gdbm-1.23-r1",
+      "name": "gdbm",
+      "versionInfo": "1.23-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-3.0-or-later",
+      "description": "GNU dbm is a set of database routines that use extensible hashing",
+      "downloadLocation": "https://www.gnu.org/software/gdbm/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "2c9d7ac18f1ac50034d34b3cbdbb83d594d50e21"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/gdbm@1.23-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-xz-libs-5.4.3-r0",
+      "name": "xz-libs",
+      "versionInfo": "5.4.3-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later",
+      "description": "Library and CLI tools for XZ and LZMA compressed files (libraries)",
+      "downloadLocation": "https://tukaani.org/xz",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9ad575fd945ac8f6ec000118ae14ec5904ccba1a"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/xz-libs@5.4.3-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libgcc-12.2.1C95git20220924-r10",
+      "name": "libgcc",
+      "versionInfo": "12.2.1_git20220924-r10",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+      "description": "GNU C compiler runtime libraries",
+      "downloadLocation": "https://gcc.gnu.org",
+      "originator": "Person: Ariadne Conill \u003cariadne@dereferenced.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "bda7f9a3006ee3366fe24f491c4e629e13596864"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libgcc@12.2.1_git20220924-r10?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libstdcC43C43-12.2.1C95git20220924-r10",
+      "name": "libstdc++",
+      "versionInfo": "12.2.1_git20220924-r10",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+      "description": "GNU C++ standard runtime library",
+      "downloadLocation": "https://gcc.gnu.org",
+      "originator": "Person: Ariadne Conill \u003cariadne@dereferenced.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "47c3970a57c41806a7d34d0d1a2cf4eda83d0085"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libstdc%2B%2B@12.2.1_git20220924-r10?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-mpdecimal-2.5.1-r2",
+      "name": "mpdecimal",
+      "versionInfo": "2.5.1-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause",
+      "description": "complete implementation of the General Decimal Arithmetic Specification",
+      "downloadLocation": "https://www.bytereef.org/mpdecimal/index.html",
+      "originator": "Person: Stefan Stutz \u003cstutz@pm.me\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "97d93d7492b577b2512cb9383e90ea09658ed451"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/mpdecimal@2.5.1-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-ncurses-terminfo-base-6.4C95p20230506-r0",
+      "name": "ncurses-terminfo-base",
+      "versionInfo": "6.4_p20230506-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "X11",
+      "description": "Descriptions of common terminals",
+      "downloadLocation": "https://invisible-island.net/ncurses/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "d1aea7e94ef886abc5e67f4a01ed808e786e37d8"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/ncurses-terminfo-base@6.4_p20230506-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libncursesw-6.4C95p20230506-r0",
+      "name": "libncursesw",
+      "versionInfo": "6.4_p20230506-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "X11",
+      "description": "Console display library (libncursesw)",
+      "downloadLocation": "https://invisible-island.net/ncurses/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "743d29ef991dfd27a2aa235d6dcad54f465388e6"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libncursesw@6.4_p20230506-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-libpanelw-6.4C95p20230506-r0",
+      "name": "libpanelw",
+      "versionInfo": "6.4_p20230506-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "X11",
+      "description": "Console display library (libpanelw)",
+      "downloadLocation": "https://invisible-island.net/ncurses/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9e643285758607e31875d6c41509751b3bd0a087"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/libpanelw@6.4_p20230506-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-readline-8.2.1-r1",
+      "name": "readline",
+      "versionInfo": "8.2.1-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later",
+      "description": "GNU readline library",
+      "downloadLocation": "https://tiswww.cwru.edu/php/chet/readline/rltop.html",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9c272f7a9f4de0c34ef5a63c5bccfa737615f9e4"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/readline@8.2.1-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-sqlite-libs-3.41.2-r3",
+      "name": "sqlite-libs",
+      "versionInfo": "3.41.2-r3",
+      "filesAnalyzed": false,
+      "licenseConcluded": "blessing",
+      "description": "C library that implements an SQL database engine (libraries)",
+      "downloadLocation": "https://www.sqlite.org/",
+      "originator": "Person: Carlo Landmeter \u003cclandmeter@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "6623fd08544c113ab6d465dee5b208ff0452dbb6"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/sqlite-libs@3.41.2-r3?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-python3-3.11.8-r0",
+      "name": "python3",
+      "versionInfo": "3.11.8-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "description": "High-level scripting language",
+      "downloadLocation": "https://www.python.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "cbc5f2414ca9295189f85f48ad0dc1ab510f0eef"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/python3@3.11.8-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-py3-parsing-3.0.9-r2",
+      "name": "py3-parsing",
+      "versionInfo": "3.0.9-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "An object-oriented approach to text processing",
+      "downloadLocation": "https://github.com/pyparsing/pyparsing",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "96ba109877872c0800ae1aa70353eb6348679bd5"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/py3-parsing@3.0.9-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-py3-packaging-23.1-r1",
+      "name": "py3-packaging",
+      "versionInfo": "23.1-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0 AND BSD-2-Clause",
+      "description": "Core utilities for Python3 packages",
+      "downloadLocation": "https://pypi.org/project/packaging",
+      "originator": "Person: psykose \u003calice@ayaya.dev\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "5f30627ce465b7451c5382a57bf0f12971f6a7b1"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/py3-packaging@23.1-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-py3-setuptools-70.3.0-r0",
+      "name": "py3-setuptools",
+      "versionInfo": "70.3.0-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Collection of enhancements to the Python3 distutils",
+      "downloadLocation": "https://pypi.org/project/setuptools",
+      "originator": "Person: psykose \u003calice@ayaya.dev\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "e4e04a1b35206de83f29530860785f03e780ba4f"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/py3-setuptools@70.3.0-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378-py3-pip-23.1.2-r0",
+      "name": "py3-pip",
+      "versionInfo": "23.1.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Tool for installing and managing Python packages",
+      "downloadLocation": "https://pip.pypa.io",
+      "originator": "Person: Fabian Affolter \u003cfabian@affolter-engineering.ch\u003e",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "422c90ae27b6fa5cec435b2503a2b222c14c90bf"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/alpine/py3-pip@23.1.2-r0?arch=x86_64",
           "referenceType": "purl"
         }
       ]
@@ -1021,9 +1133,9 @@
   ],
   "relationships": [
     {
-      "spdxElementId": "SPDXRef-Package-sha256-1892e57d16ae302085697703134cfb2b187845cfe52679d29bcfc2dde3a1beb0",
+      "spdxElementId": "SPDXRef-Package-sha256-48f04a081b9b257c5ba6fd1fc07b3d04abd2a87859338b999f98c8b695ee371d",
       "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-Package-sha256-6efc37086229618f9c23508e930216ebcb5d52de809ccda5a5fc6dd78d9c9c68"
+      "relatedSpdxElement": "SPDXRef-Package-sha256-0e667a5d01b0339f96d13aea297cb88c9dcc37fc29f6fd0df88c6ff984dce378"
     }
   ]
 }

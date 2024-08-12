@@ -1,0 +1,22 @@
+archs:
+- x86_64
+
+contents:
+  repositories:
+  - https://dl-cdn.alpinelinux.org/alpine/v3.18/main
+  - https://dl-cdn.alpinelinux.org/alpine/v3.18/community
+  packages:
+  - python3
+  - py3-pip
+  - ca-certificates-bundle
+  - alpine-base
+
+cmd: /bin/sh -c "python3 -m venv /work/venv && . /work/venv/bin/activate && pip install -r /work/requirements.txt"
+
+
+entrypoint:
+  command: /bin/sh -c ". /work/venv/bin/activate && exec flask run --host=0.0.0.0"
+#cmd: pip3 install -r /work/requirements.txt -t /work
+
+#entrypoint:
+#  command: /usr/bin/python3 -m flask run --host=0.0.0.0
