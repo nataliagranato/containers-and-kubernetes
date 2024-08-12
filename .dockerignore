@@ -13,9 +13,4 @@ kyverno/
 Dockerfile
 Dockerfile.redis
 docker-compose.yml
-apko.yaml
-melange.yaml
-sbom-aarch64.spdx.json
-sbom-x86_64.spdx.json
-sbom-index.spdx.json
-giropops-senhas.tar
+chainguard/

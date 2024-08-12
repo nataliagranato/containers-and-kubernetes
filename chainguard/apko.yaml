@@ -1,0 +1,14 @@
+archs:
+- x86_64
+
+contents:
+  repositories:
+  - https://dl-cdn.alpinelinux.org/alpine/v3.18/main
+  - https://dl-cdn.alpinelinux.org/alpine/v3.18/community
+  - file://home/nataliagranato/Downloads/giropops-senhas/chainguard/packages/x86_64
+  packages:
+  - giropops-senhas
+
+entrypoint:
+  command: /usr/bin/python3 -m flask run --host=0.0.0.0
+

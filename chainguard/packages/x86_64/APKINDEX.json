@@ -1,0 +1,30 @@
+{
+  "Signature": null,
+  "Description": "",
+  "Packages": [
+    {
+      "Name": "giropops-senhas",
+      "Version": "0.1.0-r0",
+      "Arch": "x86_64",
+      "Description": "Um gerador de senhas.",
+      "License": "Apache-2.0",
+      "Origin": "giropops-senhas",
+      "Maintainer": "",
+      "URL": "",
+      "Checksum": "t1XX4b/5t8cuskv+SkVSgOek94M=",
+      "Dependencies": [
+        "python3"
+      ],
+      "Provides": null,
+      "InstallIf": null,
+      "Size": 1227,
+      "InstalledSize": 21917,
+      "ProviderPriority": 0,
+      "BuildTime": "1970-01-01T00:00:00Z",
+      "BuildDate": 0,
+      "RepoCommit": "",
+      "Replaces": null,
+      "DataHash": "f64ac86300f44e0769a701b59892e7c67c211527ffb4d25a43519103d208f13e"
+    }
+  ]
+}
