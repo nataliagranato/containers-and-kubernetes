@@ -2,14 +2,16 @@ archs:
 - x86_64
 
 contents:
+  keyring:
+  - ./melange.rsa.pub
   repositories:
+  - '@local packages'
   - https://dl-cdn.alpinelinux.org/alpine/v3.15/main
   - https://dl-cdn.alpinelinux.org/alpine/v3.15/community
   - '@local /work/packages'
 
   packages:
-  - alpine-base
-  - python3
-  - giropops-senhas-0.1.0-r0
+  - giropops-senhas@local
+
 entrypoint:
   command: /usr/bin/python3 -m flask run --host=0.0.0.0
