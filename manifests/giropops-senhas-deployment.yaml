@@ -30,7 +30,7 @@ spec:
             memory: 256Mi
           requests:
             cpu: '0.1'
-            memory: 256Mi
+            memory: 128Mi
         imagePullPolicy: Always
         env:
         - name: REDIS_HOST
