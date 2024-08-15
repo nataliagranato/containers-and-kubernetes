@@ -1,4 +1,4 @@
-name: Build da imagem Docker giropops-senhas
+name: Build da imagem de container giropops-senhas
 
 on:
   push:
