@@ -26,29 +26,15 @@ environment:
     - py3-pip
     - py3-virtualenv
 
-#pipeline:
-#- name: Build Python application
-#  runs: |
-#    EXECDIR="${{targets.destdir}}/usr/bin"
-#    WEBAPPDIR="${{targets.destdir}}/usr/share/webapps/app"
-#    mkdir -p "${EXECDIR}" "${WEBAPPDIR}"
-#    echo "#!/usr/share/webapps/app/venv/bin/python3" > "${EXECDIR}/app"
-#    cat app.py >> "${EXECDIR}/app"
-#    chmod +x "${EXECDIR}/app"
-#    cp -r static "${EXECDIR}/"
-#    cp -r templates "${EXECDIR}/"
-#    virtualenv "${EXECDIR}/venv"
-#    sh -c "source '${EDIR}/venv/bin/activate' && pip install -r requirements.txt"
-
-
 pipeline:
 - name: Build Python application
   runs: |
-    EXECDIR="${{targets.destdir}}/usr/bin"
     WEBAPPDIR="${{targets.destdir}}/usr/share/webapps/app"
-    mkdir -p "${EXECDIR}" "${WEBAPPDIR}"
-    echo "#!/usr/share/webapps/app/venv/bin/python3" > "${EXECDIR}/app"
-    cat app.py >> "${EXECDIR}/app"
-    chmod +x "${EXECDIR}/app"
+    mkdir -p "${WEBAPPDIR}"
+    echo "#!/usr/share/webapps/app/venv/bin/python3" > "${WEBAPPDIR}/app"
+    cat app.py >> "${WEBAPPDIR}/app"
+    chmod +x "${WEBAPPDIR}/app"
+    cp -r templates "${WEBAPPDIR}"
+    cp -r static "${WEBAPPDIR}"
     virtualenv "${WEBAPPDIR}/venv"
     sh -c "source '${WEBAPPDIR}/venv/bin/activate' && pip install -r requirements.txt"

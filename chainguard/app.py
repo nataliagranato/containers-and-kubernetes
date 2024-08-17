@@ -12,7 +12,7 @@ redis_port = os.environ.get("REDIS_PORT")
 redis_user = os.environ.get("REDIS_USER")
 redis_pass = os.environ.get("REDIS_PASS")
 
-r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_pass, decode_responses=True)
+r = redis.StrictRedis(host=redis_host, port=redis_port, password="", decode_responses=True)
 
 senha_gerada_counter = Counter('senha_gerada', 'Contador de senhas geradas')
 
@@ -77,4 +77,4 @@ def ping():
    return jsonify({"status": "healthy"}), 200
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=False, host='0.0.0.0', port=5000)
