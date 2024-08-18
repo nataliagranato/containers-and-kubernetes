@@ -23,26 +23,27 @@ jobs:
         git clone https://$GH_USERNAME:$GH_TOKEN@github.com/nataliagranato/giropops-senhas-charts.git
         cd giropops-senhas-charts
 
-    # Passo 3: Configurar a conexão com o cluster Kubernetes
-    - name: Set up Kubernetes
+    # Passo 3: Instalar kubectl
+    - name: Install kubectl
       uses: azure/setup-kubectl@v3
       with:
         version: 'latest'
 
+    # Passo 4: Configurar a conexão com o cluster Kubernetes
     - name: Configure Kubernetes context
       env:
-       KUBECONFIG: ${{ secrets.KUBECONFIG }}
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
-          export KUBECONFIG=${{ secrets.KUBECONFIG }}
-          kubectl get nodes
+        export KUBECONFIG=${{ secrets.KUBECONFIG }}
+        kubectl get nodes
 
-    # Passo 4: Instalar Helm
+    # Passo 5: Instalar Helm
     - name: Install Helm
       uses: azure/setup-helm@v1
       with:
         version: 'latest'
 
-    # Passo 5: Instalar o Helm Chart em três ambientes diferentes
+    # Passo 6: Instalar o Helm Chart em três ambientes diferentes
     - name: Deploy Helm Chart to Production
       run: |
         cd giropops-senhas-charts/charts/giropops-senhas
