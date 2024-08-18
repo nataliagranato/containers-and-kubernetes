@@ -1,0 +1,67 @@
+name: Deploy Helm Chart
+
+on:
+  push:
+    branches:
+      - main  # Branch usada para deploys
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Passo 1: Checkout do código
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Passo 2: Clonar o repositório com Helm Charts
+    - name: Clone Helm Charts Repository
+      env:
+        GH_USERNAME: ${{ secrets.GH_USERNAME }}
+        GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      run: |
+        git clone https://$GH_USERNAME:$GH_TOKEN@github.com/nataliagranato/giropops-senhas-charts.git
+        cd giropops-senhas-charts
+
+    # Passo 3: Configurar a conexão com o cluster Kubernetes
+    - name: Set up Kubernetes
+      uses: azure/setup-kubectl@v2
+      with:
+        version: 'latest'
+
+    - name: Configure Kubernetes context
+      env:
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: |
+        kubectl config use-context nataliadeassis
+
+    # Passo 4: Instalar Helm
+    - name: Install Helm
+      uses: azure/setup-helm@v1
+      with:
+        version: 'latest'
+
+    # Passo 5: Instalar o Helm Chart em três ambientes diferentes
+    - name: Deploy Helm Chart to Production
+      run: |
+        cd giropops-senhas-charts/charts/giropops-senhas
+        helm upgrade --install giropops-senhas ./ \
+          --namespace giropops-senhas \
+          --create-namespace \
+          --values prd.yaml
+
+    - name: Deploy Helm Chart to Development
+      run: |
+        cd giropops-senhas-charts/charts/giropops-senhas
+        helm upgrade --install giropops-senhas-dev ./ \
+          --namespace giropops-senhas-dev \
+          --create-namespace \
+          --values dev.yaml
+
+    - name: Deploy Helm Chart to Staging
+      run: |
+        cd giropops-senhas-charts/charts/giropops-senhas
+        helm upgrade --install giropops-senhas-stg ./ \
+          --namespace giropops-senhas-stg \
+          --create-namespace \
+          --values stg.yaml
