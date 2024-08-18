@@ -34,7 +34,8 @@ jobs:
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
-        export KUBECONFIG=${{ secrets.KUBECONFIG }}
+        echo "$KUBECONFIG" | base64 --decode > /tmp/kubeconfig
+        export KUBECONFIG=/tmp/kubeconfig
         kubectl get nodes
 
     # Passo 5: Instalar Helm
