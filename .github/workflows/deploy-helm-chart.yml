@@ -51,7 +51,7 @@ jobs:
       run: |
         echo "$KUBECONFIG" | base64 --decode > kubeconfig
         export KUBECONFIG=$(pwd)/kubeconfig
-        kubectl create namespace giropops-senhas || true
+        kubectl create namespace giropops-senhas-prd || true
         kubectl create namespace giropops-senhas-dev || true
         kubectl create namespace giropops-senhas-stg || true
 
@@ -64,7 +64,7 @@ jobs:
         echo "$KUBECONFIG" | base64 --decode > kubeconfig
         export KUBECONFIG=$(pwd)/kubeconfig
         helm upgrade --install giropops-senhas ./ \
-          --namespace giropops-senhas \
+          --namespace giropops-senhas-prd \
           --values ./prd.yaml
 
     - name: Deploy Helm Chart to Development
