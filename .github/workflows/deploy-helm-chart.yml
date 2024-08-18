@@ -31,9 +31,10 @@ jobs:
 
     - name: Configure Kubernetes context
       env:
-        KUBECONFIG: ${{ secrets.KUBECONFIG }}
+       KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
-        kubectl config use-context nataliadeassis
+          export KUBECONFIG=${{ secrets.KUBECONFIG }}
+          kubectl get nodes
 
     # Passo 4: Instalar Helm
     - name: Install Helm
