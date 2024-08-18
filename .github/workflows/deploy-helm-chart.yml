@@ -47,8 +47,10 @@ jobs:
     # Passo 6: Criar namespaces se não existirem
     - name: Create namespaces
       env:
-        KUBECONFIG: $(pwd)/kubeconfig
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
         kubectl create namespace giropops-senhas || true
         kubectl create namespace giropops-senhas-dev || true
         kubectl create namespace giropops-senhas-stg || true
@@ -56,27 +58,33 @@ jobs:
     # Passo 7: Instalar o Helm Chart em três ambientes diferentes
     - name: Deploy Helm Chart to Production
       env:
-        KUBECONFIG: $(pwd)/kubeconfig
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
         cd giropops-senhas-charts/charts/giropops-senhas
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
         helm upgrade --install giropops-senhas ./ \
           --namespace giropops-senhas \
           --values ./prd.yaml
 
     - name: Deploy Helm Chart to Development
       env:
-        KUBECONFIG: $(pwd)/kubeconfig
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
         cd giropops-senhas-charts/charts/giropops-senhas
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
         helm upgrade --install giropops-senhas-dev ./ \
           --namespace giropops-senhas-dev \
           --values ./dev.yaml
 
     - name: Deploy Helm Chart to Staging
       env:
-        KUBECONFIG: $(pwd)/kubeconfig
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
         cd giropops-senhas-charts/charts/giropops-senhas
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
         helm upgrade --install giropops-senhas-stg ./ \
           --namespace giropops-senhas-stg \
           --values ./stg.yaml
