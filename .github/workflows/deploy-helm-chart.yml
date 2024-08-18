@@ -61,7 +61,7 @@ jobs:
         cd giropops-senhas-charts/charts/giropops-senhas
         helm upgrade --install giropops-senhas ./ \
           --namespace giropops-senhas \
-          --values prd.yaml
+          --values ./prd.yaml
 
     - name: Deploy Helm Chart to Development
       env:
@@ -70,7 +70,7 @@ jobs:
         cd giropops-senhas-charts/charts/giropops-senhas
         helm upgrade --install giropops-senhas-dev ./ \
           --namespace giropops-senhas-dev \
-          --values dev.yaml
+          --values ./dev.yaml
 
     - name: Deploy Helm Chart to Staging
       env:
@@ -79,6 +79,6 @@ jobs:
         cd giropops-senhas-charts/charts/giropops-senhas
         helm upgrade --install giropops-senhas-stg ./ \
           --namespace giropops-senhas-stg \
-          --values stg.yaml
+          --values ./stg.yaml
   
   
