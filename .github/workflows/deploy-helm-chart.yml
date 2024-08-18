@@ -25,7 +25,7 @@ jobs:
 
     # Passo 3: Configurar a conexão com o cluster Kubernetes
     - name: Set up Kubernetes
-      uses: azure/setup-kubectl@v2
+      uses: azure/setup-kubectl@v3
       with:
         version: 'latest'
 
