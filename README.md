@@ -23,18 +23,6 @@ O projeto **Giropops Senhas** é uma aplicação web desenvolvida com Flask que 
 - **Melange**: Utilizado para construção de pacotes.
 - **Helm**: Utilizado para gerenciamento de pacotes Kubernetes.
 
-## Extras
-
-- **Helmfile**: Utilizado para gerenciar múltiplos gráficos Helm.
-- **Docker Compose**: Utilizado para orquestração de contêineres.
-- **Hadolint**: Utilizado para análise de Dockerfiles.
-- **Trivy**: Utilizado para análise de vulnerabilidades em imagens de contêiner.
-- **Snyk**: Utilizado para análise de vulnerabilidades em dependências.
-- **CodeQL**: Utilizado para análise de código estático.
-- **CodeRabbit**: IA para Code Review e resumo de pull requests.
-- **Kind**: Utilizado para execução de clusters Kubernetes em Docker.
-- **Cert Manager**: Utilizado para gerenciamento de certificados TLS.
-
 ## Utilizando a aplicação localmente
 
 1. Clone o repositório:

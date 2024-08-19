@@ -20,7 +20,7 @@ spec:
         app: giropops-senhas
     spec:
       containers:
-      - image: nataliagranato/linuxtips-giropops-senhas:v1.1.0
+      - image: nataliagranato/senhas:1.0.0-amd64
         name: giropops-senhas
         ports:
         - containerPort: 5000
@@ -35,6 +35,8 @@ spec:
         env:
         - name: REDIS_HOST
           value: redis-service
+        - name: REDIS_PORT
+          value: "6379"
         securityContext:
           readOnlyRootFilesystem: true
           runAsNonRoot: true
