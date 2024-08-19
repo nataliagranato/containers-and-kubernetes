@@ -55,13 +55,17 @@ jobs:
         kubectl create namespace giropops-senhas-dev || true
         kubectl create namespace giropops-senhas-stg || true
 
+
     - name: Deploy Helm Chart to Production
       env:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
         cd giropops-senhas-charts/charts/giropops-senhas
-        echo "$KUBECONFIG" | base64 --decode > kubeconfig
-        export KUBECONFIG=$(pwd)/kubeconfig
         helm upgrade --install giropops-senhas ./ \
           --namespace giropops-senhas-prd \
-          --values ./prd.yaml
+          --set giropopsSenhas.enabled=true \
+          --set giropopsSenhas.replicaCount=3 \
+          --set giropopsSenhas.serviceAccountName=giropops-senhas-prd \
+          --set giropopsSenhas.env[0].name=REDIS_HOST \
+          --set giropopsSenhas.env[0].value=redis
+      
