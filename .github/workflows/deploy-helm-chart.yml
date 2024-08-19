@@ -22,6 +22,7 @@ jobs:
       run: |
         git clone https://$GH_USERNAME:$GH_TOKEN@github.com/nataliagranato/giropops-senhas-charts.git
         cd giropops-senhas-charts
+        pwd
 
     # Passo 3: Instalar kubectl
     - name: Install kubectl
@@ -61,6 +62,8 @@ jobs:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
         cd giropops-senhas-charts/charts/giropops-senhas
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
         helm upgrade --install giropops-senhas ./ \
           --namespace giropops-senhas-prd \
           --set giropopsSenhas.enabled=true \
