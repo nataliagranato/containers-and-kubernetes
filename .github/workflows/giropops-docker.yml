@@ -52,8 +52,8 @@ jobs:
         uses: docker/build-push-action@v6
         id: build-and-push
         with:
-          context: ./
-          file: ./Dockerfile
+          context: ./src
+          file: ./src/Dockerfile
           push: true
           tags: nataliagranato/linuxtips-giropops-senhas:${{ steps.generate-tag.outputs.tag }}
           labels: ${{ steps.meta.outputs.labels }}
