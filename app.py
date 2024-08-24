@@ -3,17 +3,19 @@ import redis
 import string
 import random
 import os
-from prometheus_client import Counter, start_http_server, generate_latest
+from prometheus_client import Counter, generate_latest  # Adicionando a importação necessária
 
 app = Flask(__name__)
 
-redis_host = os.environ.get('REDIS_HOST', 'redis-service')
-redis_port = 6379
-redis_password = ""
+redis_host = os.environ.get("REDIS_HOST")
+redis_port = os.environ.get("REDIS_PORT")
+redis_user = os.environ.get("REDIS_USER")
+redis_pass = os.environ.get("REDIS_PASS")
 
-r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True)
+r = redis.StrictRedis(host=redis_host, port=redis_port, password="", decode_responses=True)
 
 senha_gerada_counter = Counter('senha_gerada', 'Contador de senhas geradas')
+
 
 def criar_senha(tamanho, incluir_numeros, incluir_caracteres_especiais):
     caracteres = string.ascii_letters
@@ -44,6 +46,7 @@ def index():
         return render_template('index.html', senhas_geradas=senhas_geradas, senha=senhas_geradas[0]['senha'] or '' )
     return render_template('index.html')
 
+
 @app.route('/api/gerar-senha', methods=['POST'])
 def gerar_senha_api():
     dados = request.get_json()
@@ -70,11 +73,8 @@ def metrics():
     return generate_latest()
 
 @app.route('/health')
-def health():
-    return jsonify({"status": "healthy"}), 200
+def ping():
+   return jsonify({"status": "healthy"}), 200
 
 if __name__ == '__main__':
-    import logging
-    logging.basicConfig(filename='error.log', level=logging.DEBUG)
-    start_http_server(8088)
-    app.run(debug=False)
+    app.run(debug=False, host='0.0.0.0', port=5000)

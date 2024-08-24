@@ -1,6 +1,6 @@
 services:
   giropops-senhas:
-    image: nataliagranato/senhas:1.0.0-amd64
+    image: nataliagranato/linuxtips-giropops-senhas:e6ed8-20240824202453
     ports:
       - "5000:5000"
     networks:

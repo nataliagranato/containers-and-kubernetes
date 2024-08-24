@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: redis
-  name: redis
+  name: redis-deployment
   namespace: giropops-senhas
 spec:
   replicas: 1
@@ -16,11 +16,11 @@ spec:
         app: redis
     spec:
       containers:
-      - image: nataliagranato/redis:v1.0.0
+      - image: nataliagranato/redis:e6ed8-20240824202500
         name: redis
         ports:
         - containerPort: 6379
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             cpu: "0.1"
