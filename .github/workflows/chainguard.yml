@@ -49,7 +49,7 @@ jobs:
           cd apko_0.14.7_linux_386
           sudo mv apko /usr/local/bin/
           sudo chmod +x /usr/local/bin/apko
-          apko --version
+          apko version
 
       - name: Gerar chaves com Melange
         run: |
