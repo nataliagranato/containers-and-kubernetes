@@ -20,7 +20,7 @@ spec:
         app: giropops-senhas
     spec:
       containers:
-      - image: nataliagranato/senhas:1.0.0-amd64
+      - image: nataliagranato/linuxtips-giropops-senhas:57720-20240824212022
         name: giropops-senhas
         ports:
         - containerPort: 5000

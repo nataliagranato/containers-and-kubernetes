@@ -1,6 +1,6 @@
 services:
   giropops-senhas:
-    image: nataliagranato/linuxtips-giropops-senhas:e6ed8-20240824202453
+    image: nataliagranato/linuxtips-giropops-senhas:57720-20240824212022
     ports:
       - "5000:5000"
     networks:
@@ -23,7 +23,7 @@ services:
       - redis
 
   redis:
-    image: nataliagranato/redis:v1.0.0
+    image: nataliagranato/redis:57720-20240824212020
     networks:
       - giropops-senhas
     ports:

@@ -16,7 +16,7 @@ spec:
         app: redis
     spec:
       containers:
-      - image: nataliagranato/redis:84b04-20240824205221
+      - image: nataliagranato/redis:57720-20240824212020
         name: redis
         ports:
         - containerPort: 6379
