@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build e Distribuição de Pacotes
+    name: Melange, APKO e GitHub Container Registry
     runs-on: ubuntu-20.04
     permissions:
       actions: read
@@ -71,5 +71,5 @@ jobs:
         cd chainguard/environments/prd 
         docker load < senhas-prod.tar
         docker images
-        docker tag senhas:latest-amd64 ghcr.io/Tech-Preta/senhas-prd:$(date +%s)
-        docker push ghcr.io/Tech-Preta/senhas-prd:$(date +%s)
+        docker tag senhas:latest-amd64 ghcr.io/nataliagranato/senhas-prd:$(date +%s)
+        docker push ghcr.io/Tech-Preta/nataliagranato:$(date +%s)
