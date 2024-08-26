@@ -1,6 +1,6 @@
 # Giropops Senhas
 
-[![Build da imagem Docker giropops-senhas](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/docker-image.yml) [![CodeQL](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/github-code-scanning/codeql) [![Dependabot Updates](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/dependabot/dependabot-updates) [![Image digest update](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/digestabot.yml/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/digestabot.yml) [![Release](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/release.yml/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/release.yml)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9384/badge)](https://www.bestpractices.dev/projects/9384)[![Build da imagem de container Redis](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/redis-docker.yml/badge.svg?branch=main)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/redis-docker.yml) [![Build da imagem de container giropops-senhas](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/giropops-docker.yml/badge.svg)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/giropops-docker.yml) [![Build e Distribuição de Pacotes com Melange e APKO](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/chainguard.yml/badge.svg)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/chainguard.yml) [![CodeQL](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/github-code-scanning/codeql) [![Dependabot Updates](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/dependabot/dependabot-updates) [![Image digest update](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/digestabot.yml/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/digestabot.yml) 
 
 O projeto **Giropops Senhas** é uma aplicação web desenvolvida com Flask que permite a geração e gerenciamento de senhas. A aplicação utiliza Redis para armazenamento de dados e é containerizada usando Docker. Além disso, o projeto inclui integração contínua com GitHub Actions para construção e envio de imagens Docker, bem como verificação de vulnerabilidades.
 
@@ -32,22 +32,7 @@ git clone https://github.com/Tech-Preta/giropops-senhas.git
 cd giropops-senhas
 ```
 
-2. Construa a imagem Docker da  aplicação e do Redis:
-
-```bash
-docker build -f Dockerfile -t nataliagranato/giropops-senhas:v1.0.0 .
-docker build -f Dockerfile.redis -t nataliagranato/redis:v1.0.0 .
-```
-
-3. Inicie a aplicação e o Redis:
-
-```bash
-docker run -d --name redis -p 6380:6379 nataliagranato/redis:v1.0.0
-docker run -d --name giropops-senhas -p 5000:5000 --link redis:redis nataliagranato/giropops-senhas:v1.0.0
-```
-
-Se preferir, você pode usar o Docker Compose para iniciar a aplicação e o Redis:
-
+2. Utilize o Compose
 ```bash
 docker-compose up -d
 ```
