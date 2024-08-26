@@ -137,7 +137,7 @@ jobs:
 
           cosign sign --yes --key env://COSIGN_PRIVATE_KEY $images
       env:
-          TAGS: ${{ steps.meta.outputs.tags }}
+          TAGS: ${{ steps.push-docker-image.outputs.tags }}
           COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
           COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
           DIGEST: ${{ steps.push-docker-image.outputs.digest }}
