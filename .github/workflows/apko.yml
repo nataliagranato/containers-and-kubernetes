@@ -1,0 +1,47 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        environment: [prod] # dev, staging, prod
+
+    steps:
+    - uses: actions/checkout@v2
+    
+  deploy-prod:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install APKO
+      run: |
+        wget https://github.com/chainguard-dev/apko/releases/download/v0.14.7/apko_0.14.7_linux_386.tar.gz
+        tar -xzf apko_0.14.7_linux_386.tar.gz
+        cd apko_0.14.7_linux_386
+        sudo mv apko /usr/local/bin/
+        apko version
+        
+    - name: Download prod packages
+      uses: actions/download-artifact@v2
+      with:
+        name: packages-prod
+        path: prod-packages
+        
+    - name: Build and publish prod image
+      run: |
+        cd prod
+        apko build apko.yaml -o prod-image.tar
+        apko publish prod-image.tar
+
+

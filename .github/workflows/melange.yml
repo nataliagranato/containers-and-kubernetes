@@ -13,7 +13,7 @@ jobs:
     
     strategy:
       matrix:
-        environment: [dev, staging, prod]
+        environment: [prod] # dev, staging, prod
         
     steps:
     - uses: actions/checkout@v2
@@ -40,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: packages-${{ matrix.environment }}
-        path: chainguard/packages
+        path: chainguard/out
