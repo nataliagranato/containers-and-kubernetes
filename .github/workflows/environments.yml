@@ -51,13 +51,13 @@ jobs:
     - name: Build packages with Melange
       run: |
         cd chainguard/environments/prd
-        melange build melange.yaml --runner docker --signing-key melange.rsa --arch amd64
+        melange build melange-prod.yaml --runner docker --signing-key melange.rsa --arch amd64
 
     # Construir imagem de container com APKO
     - name: Build container image with APKO
       run: |
         cd chainguard/environments/prd
-        apko build apko.yaml senhas senhas-prd.tar -k melange.rsa.pub --arch amd64
+        apko build apko-prod.yaml senhas senhas-prd.tar -k melange.rsa.pub --arch amd64
 
 
     # Load da imagem Docker
