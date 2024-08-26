@@ -28,6 +28,7 @@ jobs:
       run: |
         wget https://github.com/chainguard-dev/melange/releases/download/v0.11.2/melange_0.11.2_linux_386.tar.gz
         tar -xzf melange_0.11.2_linux_386.tar.gz
+        cd melange_0.11.2_linux_386
         sudo mv melange /usr/local/bin/
         melange version
 
@@ -36,6 +37,7 @@ jobs:
       run: |
         wget https://github.com/chainguard-dev/apko/releases/download/v0.14.7/apko_0.14.7_linux_386.tar.gz
         tar -xzf apko_0.14.7_linux_386.tar.gz
+        cd apko_0.14.7_linux_386
         sudo mv apko /usr/local/bin/
         apko version
 
