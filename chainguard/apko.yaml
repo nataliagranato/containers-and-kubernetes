@@ -4,7 +4,7 @@ contents:
   - packages
   packages:
   - alpine-baselayout-data
-  - giropops-senhas
+  - senhas
 accounts:
   groups:
   - groupname: nonroot
