@@ -72,4 +72,4 @@ jobs:
         docker load < senhas-prod.tar
         docker images
         docker tag senhas:latest-amd64 ghcr.io/nataliagranato/senhas-prd:$(date +%s)
-        docker push ghcr.io/Tech-Preta/nataliagranato:$(date +%s)
+        docker push ghcr.io/nataliagranato/senhas-prd:$(date +%s)
