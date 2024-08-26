@@ -120,25 +120,26 @@ jobs:
     # Assinar imagem com o Cosign
     - name: Assinar imagem com uma chave
       run: |
-          if [ -z "${TAGS}" ] || [ -z "${DIGEST}" ]; then
-            echo "Erro: TAGS ou DIGEST não estão definidos."
-            exit 1
-          fi
+        TAGS="${{ steps.meta.outputs.tags }}"
+        DIGEST="${{ steps.push-docker-image.outputs.digest }}"
 
-          images=""
-          for tag in ${TAGS}; do
-            images+="${tag}@${DIGEST} "
-          done
+        if [ -z "${TAGS}" ] || [ -z "${DIGEST}" ]; then
+          echo "Erro: TAGS ou DIGEST não estão definidos."
+          exit 1
+        fi
 
-          if [ -z "$images" ]; then
-            echo "Erro: Nenhuma imagem para assinar."
-            exit 1
-          fi
+        images=""
+        for tag in ${TAGS}; do
+          images+="${tag}@${DIGEST} "
+        done
 
-          cosign sign --yes --key env://COSIGN_PRIVATE_KEY $images
+        if [ -z "$images" ]; then
+          echo "Erro: Nenhuma imagem para assinar."
+          exit 1
+        fi
+
+        cosign sign --yes --key env://COSIGN_PRIVATE_KEY $images
       env:
-          TAGS: ${{ steps.push-docker-image.outputs.tags }}
-          COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
-          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
-          DIGEST: ${{ steps.push-docker-image.outputs.digest }}
+        COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+        COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
 
