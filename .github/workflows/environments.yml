@@ -64,9 +64,9 @@ jobs:
     - name: Load Docker image
       run: |
         cd chainguard/environments/prd
-        docker load < senhas-prd.tar
+        docker load < senhas-prod.tar
         docker images
-        docker tag senhas-prd:latest-amd64 ghcr.io/nataliagranato/senhas-prd:$(date +%s)
+        docker tag senhas-prod:latest-amd64 ghcr.io/nataliagranato/senhas-prd:$(date +%s)
         export CR_PAT=$PERSONAL_ACCESS_TOKEN
         echo $CR_PAT | docker login ghcr.io -u nataliagranato --password-stdin
         docker push ghcr.io/nataliagranato/senhas-prd:$(date +%s)
