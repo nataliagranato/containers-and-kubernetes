@@ -1,5 +1,0 @@
-name: dev
-packages:
-- name: my-app
-  version: 1.0.0
-  source: https://github.com/Tech-Preta/LINUXtips-PICK/blob/main/chainguard/packages/x86_64/senhas-1.0.0-r0.apk
