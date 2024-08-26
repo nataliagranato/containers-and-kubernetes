@@ -87,9 +87,35 @@ jobs:
             echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"   
 
     - name: Push Docker image
+      id: push-docker-image
       run: |   
         docker tag senhas:latest-amd64 ${{ secrets.DOCKER_USERNAME }}/senhas:${{ steps.generate-tag.outputs.tag }}
         docker push ${{ secrets.DOCKER_USERNAME }}/senhas:${{ steps.generate-tag.outputs.tag }}
 
+    - name: Aqua Security Trivy
+      uses: aquasecurity/trivy-action@0.24.0
+      with:
+            image-ref: nataliagranato/senhas:${{ steps.generate-tag.outputs.tag }}
+            format: 'sarif'
+            severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+            output: 'trivy-results.sarif'
+        
+    - name: Fazer upload dos resultados do Trivy para a aba de Segurança do GitHub
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+            sarif_file: 'trivy-results.sarif'
 
+    - name: Assinar imagem com uma chave
+      run: |
+          images=""
+          for tag in ${TAGS}; do
+            images+="${tag}@${DIGEST} "
+          done
+          cosign sign --yes --key env://COSIGN_PRIVATE_KEY $images
+      env:
+          TAGS: ${{ steps.meta.outputs.tags }}
+          COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
+          DIGEST: ${{ steps.push-docker-image.outputs.digest }}
 
