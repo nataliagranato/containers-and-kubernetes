@@ -58,15 +58,18 @@ jobs:
       run: |
         cd chainguard/environments/prd
         apko build apko-prod.yaml senhas senhas-prod.tar -k melange.rsa.pub --arch amd64
-
-
-    # Load da imagem Docker
+    
+    # Log in no GitHub Container Registry
+    - name: Log in to GitHub Container Registry
+      env:
+          CR_PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      run: echo $CR_PAT | docker login ghcr.io -u nataliagranato --password-stdin
+  
+    # Load da imagem de container e push para o GitHub Container Registry
     - name: Load Docker image
       run: |
         cd chainguard/environments/prd 
         docker load < senhas-prod.tar
         docker images
         docker tag senhas:latest-amd64 ghcr.io/nataliagranato/senhas-prd:$(date +%s)
-        export CR_PAT=$PERSONAL_ACCESS_TOKEN
-        echo $CR_PAT | docker login ghcr.io -u nataliagranato --password-stdin
         docker push ghcr.io/nataliagranato/senhas-prd:$(date +%s)
