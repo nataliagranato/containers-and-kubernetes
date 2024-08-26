@@ -120,10 +120,21 @@ jobs:
     # Assinar imagem com o Cosign
     - name: Assinar imagem com uma chave
       run: |
+          if [ -z "${TAGS}" ] || [ -z "${DIGEST}" ]; then
+            echo "Erro: TAGS ou DIGEST não estão definidos."
+            exit 1
+          fi
+
           images=""
           for tag in ${TAGS}; do
             images+="${tag}@${DIGEST} "
           done
+
+          if [ -z "$images" ]; then
+            echo "Erro: Nenhuma imagem para assinar."
+            exit 1
+          fi
+
           cosign sign --yes --key env://COSIGN_PRIVATE_KEY $images
       env:
           TAGS: ${{ steps.meta.outputs.tags }}
