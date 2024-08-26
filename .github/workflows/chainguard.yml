@@ -1,6 +1,18 @@
+name: Build e Distribuição de Pacotes com Melange e APKO
+
+on:
+  push:
+    branches:
+      - 'main'
+
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build:
+    name: Build e Distribuição de Pacotes
+    runs-on: ubuntu-20.04
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
     steps:
     # Passo 1: Checkout do código
