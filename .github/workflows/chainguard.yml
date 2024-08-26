@@ -1,85 +1,102 @@
-name: Build e Distribuição de Pacotes com Melange e APKO
-
-on:
-  push:
-    branches:
-      - 'main'
-
 jobs:
-  build:
-    name: Build e Distribuição de Pacotes
-    runs-on: ubuntu-20.04
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Fazer checkout do código
-        uses: actions/checkout@v3
+    # Passo 1: Checkout do código
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Configurar QEMU
-        uses: docker/setup-qemu-action@v3
+    # Passo 2: Configurar Docker Buildx
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
 
-      - name: Instalar Cosign
-        uses: sigstore/cosign-installer@v3
+    # Passo 3: Instalar Melange
+    - name: Install Melange
+      run: |
+        wget https://github.com/chainguard-dev/melange/releases/download/v0.11.2/melange_0.11.2_linux_386.tar.gz
+        tar -xzf melange_0.11.2_linux_386.tar.gz
+        sudo mv melange /usr/local/bin/
+        melange version
 
-      - name: Configurar Docker Buildx
-        uses: docker/setup-buildx-action@v3
+    # Passo 4: Instalar APKO
+    - name: Install APKO
+      run: |
+        wget https://github.com/chainguard-dev/apko/releases/download/v0.14.7/apko_0.14.7_linux_386.tar.gz
+        tar -xzf apko_0.14.7_linux_386.tar.gz
+        sudo mv apko /usr/local/bin/
+        apko version
 
-      - name: Fazer login no Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+    # Passo 5: Gerar chaves com Melange
+    - name: Generate keys with Melange
+      run: |
+        cd chainguard
+        melange keygen
 
-      - name: Install Melange
-        run: |
-          wget https://github.com/chainguard-dev/melange/releases/download/v0.11.2/melange_0.11.2_linux_386.tar.gz
-          tar -xzf melange_0.11.2_linux_386.tar.gz
-          cd melange_0.11.2_linux_386
-          sudo mv melange /usr/local/bin/
-          sudo chmod +x /usr/local/bin/melange
-          melange version
+    # Passo 6: Construir pacotes com Melange
+    - name: Build packages with Melange
+      run: |
+        cd chainguard
+        melange build melange.yaml --runner docker --signing-key melange.rsa --arch amd64
 
-      - name: Install APKO
-        run: |
-          wget https://github.com/chainguard-dev/apko/releases/download/v0.14.7/apko_0.14.7_linux_386.tar.gz
-          tar -xzf apko_0.14.7_linux_386.tar.gz
-          cd apko_0.14.7_linux_386
-          sudo mv apko /usr/local/bin/
-          sudo chmod +x /usr/local/bin/apko
-          apko version
+    # Passo 7: Construir imagem de container com APKO
+    - name: Build container image with APKO
+      run: |
+        cd chainguard
+        apko build apko.yaml senhas senhas.tar -k melange.rsa.pub --arch amd64
 
-      - name: Gerar chaves com Melange
-        run: |
-          cd chainguard
-          melange keygen
+    # Passo 8: Carregar a imagem Docker
+    - name: Load Docker image
+      run: |
+        docker load < senhas.tar
+        docker images
 
-      - name: Construir pacotes com Melange
-        run: |
-          cd chainguard
-          melange build melange.yaml --runner docker --signing-key melange.rsa --arch amd64
+    # Passo 9: Fazer login no DockerHub
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Construir imagem de container com APKO
-        run: |
-          cd chainguard
-          apko build apko.yaml senhas:v1.0.0 giropops-senhas.tar -k melange.rsa.pub --arch amd64
+    # Passo 10: Gerar nome único para a tag
+    - name: Gerar nome único para a tag
+      id: generate-tag
+      run: |
+        SHORT_HASH=$(git log -1 --pretty=format:%h | cut -c1-5)
+        TIMESTAMP=$(date +%Y%m%d%H%M%S)
+        echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
+        echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"
 
-      - name: Carregar a imagem Docker
-        run: |
-          docker load < chainguard/giropops-senhas.tar
+    # Passo 11: Fazer push da imagem Docker
+    - name: Fazer push da imagem Docker
+      run: |
+        docker tag senhas:latest-amd64 ${{ secrets.DOCKER_USERNAME }}/senhas:${{ steps.generate-tag.outputs.tag }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/senhas:${{ steps.generate-tag.outputs.tag }}
 
-      - name: Extrair metadados (tags, labels) para Docker
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ secrets.DOCKER_USERNAME }}/giropops-senhas
-
-      - name: Gerar nome único para a tag
-        id: generate-tag
-        run: |
-          SHORT_HASH=$(git log -1 --pretty=format:%h | cut -c1-5)
-          TIMESTAMP=$(date +%Y%m%d%H%M%S)
-          echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
-          echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"
+      # Passo 12: Scan de segurança com Trivy
+    - name: Aqua Security Trivy
+      uses: aquasecurity/trivy-action@0.24.0
+      with:
+              image-ref: nataliagranato/linuxtips-giropops-senhas:${{ steps.generate-tag.outputs.tag }}
+              format: 'sarif'
+              severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+              output: 'trivy-results.sarif'
+          
+    - name: Fazer upload dos resultados do Trivy para a aba de Segurança do GitHub
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+              sarif_file: 'trivy-results.sarif'
+  
+    - name: Assinar imagem com uma chave
+      run: |
+            images=""
+            for tag in ${TAGS}; do
+              images+="${tag}@${DIGEST} "
+            done
+            cosign sign --yes --key env://COSIGN_PRIVATE_KEY $images
+      env:
+          TAGS: ${{ steps.meta.outputs.tags }}
+          COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
+          DIGEST: ${{ steps.<load-images>.outputs.digest }}

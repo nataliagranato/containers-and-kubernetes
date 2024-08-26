@@ -1,6 +1,6 @@
 package:
-  name: giropops-senhas
-  version: 0.1.0
+  name: senhas
+  version: 1.0.0
   description: Um gerador de senhas.
   copyright:
   - license: Apache-2.0
