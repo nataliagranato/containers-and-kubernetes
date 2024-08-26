@@ -63,6 +63,7 @@ jobs:
     # Load da imagem Docker
     - name: Load Docker image
       run: |
+        cd chainguard/environments/prd 
         docker load < senhas-prod.tar
         docker images
         docker tag senhas:latest-amd64 ghcr.io/nataliagranato/senhas-prd:$(date +%s)
