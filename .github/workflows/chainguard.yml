@@ -45,58 +45,36 @@ jobs:
         cd chainguard
         apko build apko.yaml senhas senhas.tar -k melange.rsa.pub --arch amd64
 
-    # Passo 8: Carregar a imagem Docker
-    - name: Load Docker image
-      run: |
-        docker load < senhas.tar
-        docker images
-
-    # Passo 9: Fazer login no DockerHub
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    # Passo 10: Gerar nome único para a tag
+    - name: Load Docker image
+      run: |
+        docker load < senhas.tar
+        docker images
+    
+    - name: Extrair metadados (tags, labels) para Docker
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+          images: nataliagranato/senhas
+
     - name: Gerar nome único para a tag
       id: generate-tag
       run: |
-        SHORT_HASH=$(git log -1 --pretty=format:%h | cut -c1-5)
-        TIMESTAMP=$(date +%Y%m%d%H%M%S)
-        echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
-        echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"
+            # Obtém os primeiros 5 dígitos do hash do commit e a data
+            SHORT_HASH=$(git log -1 --pretty=format:%h | cut -c1-5)
+            TIMESTAMP=$(date +%Y%m%d%H%M%S)
+            echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
+            echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"   
 
-    # Passo 11: Fazer push da imagem Docker
-    - name: Fazer push da imagem Docker
-      run: |
+    - name: Push Docker image
+      run: |   
         docker tag senhas:latest-amd64 ${{ secrets.DOCKER_USERNAME }}/senhas:${{ steps.generate-tag.outputs.tag }}
         docker push ${{ secrets.DOCKER_USERNAME }}/senhas:${{ steps.generate-tag.outputs.tag }}
 
-      # Passo 12: Scan de segurança com Trivy
-    - name: Aqua Security Trivy
-      uses: aquasecurity/trivy-action@0.24.0
-      with:
-              image-ref: nataliagranato/linuxtips-giropops-senhas:${{ steps.generate-tag.outputs.tag }}
-              format: 'sarif'
-              severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
-              output: 'trivy-results.sarif'
-          
-    - name: Fazer upload dos resultados do Trivy para a aba de Segurança do GitHub
-      uses: github/codeql-action/upload-sarif@v3
-      if: always()
-      with:
-              sarif_file: 'trivy-results.sarif'
-  
-    - name: Assinar imagem com uma chave
-      run: |
-            images=""
-            for tag in ${TAGS}; do
-              images+="${tag}@${DIGEST} "
-            done
-            cosign sign --yes --key env://COSIGN_PRIVATE_KEY $images
-      env:
-          TAGS: ${{ steps.meta.outputs.tags }}
-          COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
-          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
-          DIGEST: ${{ steps.<load-images>.outputs.digest }}
+
+
