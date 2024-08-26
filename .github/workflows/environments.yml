@@ -57,7 +57,7 @@ jobs:
     - name: Build container image with APKO
       run: |
         cd chainguard/environments/prd
-        apko build apko-prod.yaml senhas senhas-prd.tar -k melange.rsa.pub --arch amd64
+        apko build apko-prod.yaml senhas senhas-prod.tar -k melange.rsa.pub --arch amd64
 
 
     # Load da imagem Docker

@@ -4,7 +4,7 @@ contents:
   - packages
   packages:
   - alpine-baselayout-data
-  - senhas
+  - senhas-prod
 accounts:
   groups:
   - groupname: nonroot
