@@ -4,10 +4,12 @@ metadata:
   name: giropops-service
   namespace: giropops-senhas
   labels:
-    app: giropops-senhas
+    app.kubernetes.io/instance: giropops-senhas
+    app.kubernetes.io/name: senhas
 spec:
   selector:
-    app: giropops-senhas
+    app.kubernetes.io/instance: giropops-senhas
+    app.kubernetes.io/name: senhas
   ports:
   - protocol: TCP
     port: 5000

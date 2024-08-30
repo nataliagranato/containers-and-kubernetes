@@ -22,6 +22,10 @@ Para criar um cluster Kubernetes usando `kind` (Kubernetes IN Docker) a partir d
     - role: worker
     - role: worker
     - role: worker
+    - role: worker
+    - role: worker
+    - role: control-plane
+    - role: control-plane
     - role: control-plane
     kubeadmConfigPatches:
     - |

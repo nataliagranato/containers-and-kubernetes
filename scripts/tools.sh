@@ -23,3 +23,14 @@ sudo chmod 700 get_helm.sh
 [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
+
+# Instalação o Hadolint
+brew install hadolint
+
+# Instalando o docker-scout
+curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
+
+# Instalando o Trivy
+wget https://github.com/aquasecurity/trivy/releases/download/v0.18.3/trivy_0.18.3_Linux-64bit.deb
+sudo dpkg -i trivy_0.18.3_Linux-64bit.deb
+

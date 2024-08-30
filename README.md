@@ -1,6 +1,6 @@
 # Giropops Senhas
 
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9384/badge)](https://www.bestpractices.dev/projects/9384)[![Build da imagem de container Redis](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/redis-docker.yml/badge.svg?branch=main)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/redis-docker.yml) [![Build da imagem de container giropops-senhas](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/giropops-docker.yml/badge.svg)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/giropops-docker.yml) [![Build e Distribuição de Pacotes com Melange e APKO](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/chainguard.yml/badge.svg)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/chainguard.yml) [![CodeQL](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/github-code-scanning/codeql) [![Dependabot Updates](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/dependabot/dependabot-updates) [![Image digest update](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/digestabot.yml/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/digestabot.yml) 
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9384/badge)](https://www.bestpractices.dev/projects/9384)[![Build da imagem de container Redis](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/redis-docker.yml/badge.svg?branch=main)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/redis-docker.yml) [![Build da imagem de container giropops-senhas](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/giropops-docker.yml/badge.svg)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/giropops-docker.yml) [![Build e Distribuição de Pacotes com Melange e APKO](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/chainguard.yml/badge.svg)](https://github.com/Tech-Preta/LINUXtips-PICK/actions/workflows/chainguard.yml) [![CodeQL](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/github-code-scanning/codeql) [![Dependabot Updates](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/dependabot/dependabot-updates) [![Image digest update](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/digestabot.yml/badge.svg)](https://github.com/Tech-Preta/giropops-senhas/actions/workflows/digestabot.yml)
 
 O projeto **Giropops Senhas** é uma aplicação web desenvolvida com Flask que permite a geração e gerenciamento de senhas. A aplicação utiliza Redis para armazenamento de dados e é containerizada usando Docker. Além disso, o projeto inclui integração contínua com GitHub Actions para construção e envio de imagens Docker, bem como verificação de vulnerabilidades.
 
@@ -22,6 +22,14 @@ O projeto **Giropops Senhas** é uma aplicação web desenvolvida com Flask que 
 - **APKO**: Utilizado para construção de imagens de contêiner.
 - **Melange**: Utilizado para construção de pacotes.
 - **Helm**: Utilizado para gerenciamento de pacotes Kubernetes.
+- **Hadolint**: Utilizado para verificação de qualidade de Dockerfiles.
+- **Docker Scout**: Utilizado para verificação de vulnerabilidades em imagens de contêiner.
+- **Snyk**: Utilizado para verificação de vulnerabilidades em dependências de aplicativos.
+- **Trivy**: Utilizado para verificação de vulnerabilidades em imagens de contêiner.
+- **CodeRabbit**: Utilizado para revisão de código.
+- **DependaBot**: Utilizado para manter as dependências atualizadas.
+- **Popeye**: Utilizado para verificação de configurações de cluster Kubernetes.
+- **Grafana**: Utilizado para visualização de métricas.
 
 ## Utilizando a aplicação localmente
 
@@ -33,6 +41,7 @@ cd giropops-senhas
 ```
 
 2. Utilize o Compose
+
 ```bash
 docker-compose up -d
 ```

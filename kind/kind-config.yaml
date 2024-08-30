@@ -4,6 +4,10 @@ nodes:
 - role: worker
 - role: worker
 - role: worker
+- role: worker
+- role: worker
+- role: control-plane
+- role: control-plane
 - role: control-plane
   kubeadmConfigPatches:
   - |
