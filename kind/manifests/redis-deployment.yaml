@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: redis
+  name: redis
+  namespace: giropops-senhas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - image: cgr.dev/chainguard/redis:latest@sha256:5c5193e437be1cb5af4f853c814878a83553d95e55421ae5e7227eb58ea7a26a
+          name: redis
+          ports:
+            - containerPort: 6379
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+        # securityContext:
+        #   readOnlyRootFilesystem: true
+        #   runAsNonRoot: true
+        #   runAsUser: 1000

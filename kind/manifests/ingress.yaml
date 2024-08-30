@@ -1,0 +1,33 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: giropops-senhas-ingress
+  namespace: giropops-senhas
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "giropops-cookie"
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+spec:
+  rules:
+    - host: giropops.com.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: giropops-svc
+                port:
+                  number: 5000
+    - host: locust.giropops.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: locust-giropops
+                port:
+                  number: 80
