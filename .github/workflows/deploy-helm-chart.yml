@@ -12,7 +12,7 @@ jobs:
     steps:
     # Passo 1: Checkout do código
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     # Passo 2: Clonar o repositório com Helm Charts
     - name: Clone Helm Charts Repository
