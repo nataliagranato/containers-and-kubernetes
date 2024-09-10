@@ -53,7 +53,7 @@ jobs:
         id: build-and-push
         with:
           context: ./redis
-          file: ./redis/Dockerfile.redis
+          file: ./redis/Dockerfile
           push: true
           tags: nataliagranato/redis:${{ steps.generate-tag.outputs.tag }}
           labels: ${{ steps.meta.outputs.labels }}
