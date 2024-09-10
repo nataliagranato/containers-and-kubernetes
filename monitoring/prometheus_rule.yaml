@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: giropops-senhas-rules
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: prometheus
+spec:
+  groups:
+  - name: giropops-senhas
+    rules:
+    - alert: GiropopsSenhasDown
+      expr: up{namespace="giropops-senhas", app="giropops-senhas"} == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "A aplicação Giropops Senhas está fora do ar"
+        description: "A aplicação Giropops Senhas no namespace giropops-senhas está fora do ar por mais de 1 minutos."
