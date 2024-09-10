@@ -4,6 +4,23 @@
 
 O projeto **Giropops Senhas** é uma aplicação web desenvolvida com Flask que permite a geração e gerenciamento de senhas. A aplicação utiliza Redis para armazenamento de dados e é containerizada usando Docker. Além disso, o projeto inclui integração contínua com GitHub Actions para construção e envio de imagens Docker, bem como verificação de vulnerabilidades.
 
+# Links do Projeto
+
+## Públicos
+
+- **Aplicação**: [https://senhas.nataliagranato.xyz](https://senhas.nataliagranato.xyz)
+- **Documentação do Projeto**: [https://devops.nataliagranato.xyz](https://devops.nataliagranato.xyz)
+- **Pipelines**: [https://github.com/nataliagranato/LINUXtips-PICK/tree/develop/.github/workflows](https://github.com/nataliagranato/LINUXtips-PICK/tree/develop/.github/workflows)
+- **Fórum de Discussão para Dúvidas**: [https://github.com/nataliagranato/LINUXtips-PICK/discussions](https://github.com/nataliagranato/LINUXtips-PICK/discussions)
+- **Prometheus**: [https://prom.nataliagranato.xyz/](https://prom.nataliagranato.xyz/)
+- **Grafana**: [https://grafana.nataliagranato.xyz/public-dashboards/56431da54e9143438ef8e5da78258347](https://grafana.nataliagranato.xyz/public-dashboards/56431da54e9143438ef8e5da78258347)
+- **Pacotes**: [https://github.com/nataliagranato?tab=packages&repo_name=LINUXtips-PICK](https://github.com/nataliagranato?tab=packages&repo_name=LINUXtips-PICK)
+
+## Privados
+
+- **Helm Chart**: [https://github.com/nataliagranato/senhas](https://github.com/nataliagranato/senhas)
+- **Registry**: `nataliagranato/senhas:1.0.0-amd64`
+
 ## Ferramentas e Tecnologias Utilizadas
 
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![YAML](https://img.shields.io/badge/yaml-%23ffffff.svg?style=for-the-badge&logo=yaml&logoColor=151515) ![AquaSec](https://img.shields.io/badge/aqua-%231904DA.svg?style=for-the-badge&logo=aqua&logoColor=#0018A8) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white)
