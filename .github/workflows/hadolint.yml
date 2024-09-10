@@ -42,7 +42,7 @@ jobs:
       - name: Run hadolint Redis
         uses: hadolint/hadolint-action@54c9adbab1582c2ef04b2016b760714a4bfde3cf
         with:
-          dockerfile: ./redis/Dockerfile.redis
+          dockerfile: ./redis/Dockerfile
           format: sarif
           output-file: hadolint-results.sarif
           no-fail: true
