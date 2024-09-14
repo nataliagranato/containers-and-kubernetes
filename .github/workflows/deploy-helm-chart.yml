@@ -38,31 +38,56 @@ jobs:
         export KUBECONFIG=$(pwd)/kubeconfig
         kubectl get nodes
 
-#    # Passo 5: Instalar Helm
-#    - name: Install Helm
-#      uses: azure/setup-helm@v1
-#      with:
-#        version: 'latest'
+    # Passo 5: Instalar Helm
+    - name: Install Helm
+      uses: azure/setup-helm@v1
+      with:
+        version: 'latest'
 
-#    # Passo 6: Criar namespaces se não existirem
-#    - name: Create namespaces
-#      env:
-#        KUBECONFIG: ${{ secrets.KUBECONFIG }}
-#      run: |
-#        echo "$KUBECONFIG" | base64 --decode > kubeconfig
-#        export KUBECONFIG=$(pwd)/kubeconfig
-#        kubectl create namespace giropops-senhas-prd || true
-#        kubectl create namespace giropops-senhas-dev || true
-#        kubectl create namespace giropops-senhas-stg || true
+    # Passo 6: Criar namespaces se não existirem
+    - name: Create namespaces
+      env:
+        KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: |
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
+        kubectl create namespace giropops-senhas-prd || true
+        kubectl create namespace giropops-senhas-dev || true
+        kubectl create namespace giropops-senhas-stg || true
 
 
-#    - name: Deploy Helm Chart to Production
-#      env:
-#          KUBECONFIG: ${{ secrets.KUBECONFIG }}
-#      run: |
-#        cd /senhas/charts/senhas
-#        echo "$KUBECONFIG" | base64 --decode > kubeconfig
-#        export KUBECONFIG=$(pwd)/kubeconfig
-#        helm upgrade -i giropops-senhas -n giropops-senhas-prd .
+    - name: Deploy Helm Chart Production
+      env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: |
+        cd /senhas/charts/senhas
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
+        helm upgrade -i giropops-senhas -n giropops-senhas-prd .
 
-      
+    - name: Deploy Helm Chart Production
+      env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: |
+        cd /senhas/charts/senhas
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
+        helm upgrade -i giropops-senhas -n giropops-senhas-prd .
+
+    - name: Deploy Helm Chart Staging
+      env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: |
+        cd /senhas/charts/senhas
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
+        helm upgrade -i giropops-senhas -n giropops-senhas-stg .
+
+    - name: Deploy Helm Chart Development
+      env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+      run: |
+        cd /senhas/charts/senhas
+        echo "$KUBECONFIG" | base64 --decode > kubeconfig
+        export KUBECONFIG=$(pwd)/kubeconfig
+        helm upgrade -i giropops-senhas -n giropops-senhas-dev .
