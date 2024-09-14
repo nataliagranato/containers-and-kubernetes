@@ -41,6 +41,10 @@ jobs:
         sudo mv apko /usr/local/bin/
         apko version
 
+    # Verificar o arquivo apko-stg.yaml
+    - name: Verify apko-stg.yaml
+      run: cat chainguard/environments/stg/apko-stg.yaml
+
     # Gerar chaves com Melange
     - name: Generate keys with Melange
       run: |
