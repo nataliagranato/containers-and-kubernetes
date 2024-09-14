@@ -51,13 +51,13 @@ jobs:
     - name: Build packages with Melange
       run: |
         cd chainguard/environments/dev
-        melange build melange-prod.yaml --runner docker --signing-key melange.rsa --arch amd64
+        melange build melange-dev.yaml --runner docker --signing-key melange.rsa --arch amd64
 
     # Construir imagem de container com APKO
     - name: Build container image with APKO
       run: |
         cd chainguard/environments/dev
-        apko build apko-prod.yaml senhas senhas-prod.tar -k melange.rsa.pub --arch amd64
+        apko build apko-dev.yaml senhas senhas-dev.tar -k melange.rsa.pub --arch amd64
     
     # Log in no GitHub Container Registry
     - name: Log in to GitHub Container Registry
@@ -69,7 +69,7 @@ jobs:
     - name: Load Docker image
       run: |
         cd chainguard/environments/dev
-        docker load < senhas-prod.tar
+        docker load < senhas-dev.tar
         docker images
         docker tag senhas:latest-amd64 ghcr.io/nataliagranato/senhas-dev:$(date +%s)
         docker push ghcr.io/nataliagranato/senhas-dev:$(date +%s)
