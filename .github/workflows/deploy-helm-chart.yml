@@ -40,7 +40,7 @@ jobs:
 
     # Passo 5: Instalar Helm
     - name: Install Helm
-      uses: azure/setup-helm@v1
+      uses: azure/setup-helm@v4
       with:
         version: 'latest'
 
