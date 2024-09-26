@@ -1,0 +1,41 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: nataliagranato
+  region: us-east-1
+  version: "1.30"
+
+managedNodeGroups:
+ - name: ng-ondemand-1
+   instanceTypes: ["m6a.xlarge"]
+   spot: false
+   privateNetworking: true
+   minSize: 1
+   maxSize: 3
+   desiredCapacity: 2
+   volumeSize: 50
+   volumeType: gp3
+   updateConfig:
+     maxUnavailablePercentage: 30
+   availabilityZones: ["us-east-1a"]
+   ssh:
+     allow: false
+   labels:
+     node_group: ng-ondemand-1
+   tags:
+     nodegroup-role: ng-ondemand-1
+     k8s.io/cluster-autoscaler/enabled: "true"
+     k8s.io/cluster-autoscaler/nataliagranato: "owned"
+     nataliagranato.xyz: "true"
+
+   iam:
+     withAddonPolicies:
+       externalDNS: true
+       certManager: true
+       imageBuilder: true
+       albIngress: true
+       autoScaler: true
+       ebs: true
+       efs: true

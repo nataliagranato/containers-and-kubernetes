@@ -1,0 +1,44 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: nataliagranato
+  region: us-east-1
+  version: "1.30"
+
+availabilityZones: ["us-east-1a","us-east-1b","us-east-1c"]
+
+vpc:
+  cidr: 172.20.0.0/16
+  clusterEndpoints:
+    publicAccess: true
+    privateAccess: true
+
+iam:
+  withOIDC: true
+  serviceAccounts:
+  - metadata:
+      name: s3-fullaccess
+    attachPolicyARNs:
+    - "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+  - metadata:
+      name: aws-load-balancer-controller
+      namespace: kube-system
+    wellKnownPolicies:
+      awsLoadBalancerController: true
+  - metadata:
+      name: external-dns
+      namespace: kube-system
+    wellKnownPolicies:
+      externalDNS: true
+  - metadata:
+      name: cert-manager
+      namespace: cert-manager
+    wellKnownPolicies:
+      certManager: true
+  - metadata:
+      name: cluster-autoscaler
+      namespace: kube-system
+    wellKnownPolicies:
+      autoScaler: true
