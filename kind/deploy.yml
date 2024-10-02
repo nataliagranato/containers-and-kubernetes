@@ -1,0 +1,15 @@
+- name: Aplicar Manifestos e Atualizar /etc/hosts
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Exportar KUBECONFIG
+    shell: export KUBECONFIG=~/.kube/config && echo $KUBECONFIG
+    register: kubeconfig_path
+
+  - name: Aplicar manifestos do diretório kind/manifests
+    command: kubectl apply -f {{ item }}
+    with_fileglob:
+    - "/home/nataliagranato/Downloads/LINUXtips-PICK/kind/manifests/*.yaml"
+    environment:
+      KUBECONFIG: "{{ kubeconfig_path.stdout }}"

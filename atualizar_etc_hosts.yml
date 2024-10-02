@@ -1,0 +1,17 @@
+- name: Atualizar /etc/hosts
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Adicionar entradas ao /etc/hosts
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        create: true
+        line: "{{ item }}"
+        mode: '0644'
+      with_items:
+        - "127.0.0.1   senhas.nataliagranato.xyz"
+        - "127.0.0.1   grafana.nataliagranato.xyz"
+        - "127.0.0.1   alert.nataliagranato.xyz"
+        - "127.0.0.1   prom.nataliagranato.xyz"
+      become: true
+      become_user: root

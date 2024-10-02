@@ -1,0 +1,93 @@
+---
+- name: Configurar e Aplicar Manifestos Kubernetes
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Obter o KUBECONFIG do kind
+      ansible.builtin.command: kind get kubeconfig
+      register: kubeconfig_content
+
+    - name: Criar arquivo KUBECONFIG temporário
+      ansible.builtin.copy:
+        content: "{{ kubeconfig_content.stdout }}"
+        dest: /tmp/kind_kubeconfig
+
+    - name: Verificar a conexão com o servidor Kubernetes
+      ansible.builtin.command: kubectl cluster-info
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+      register: cluster_info
+      failed_when: "'Kubernetes control plane' not in cluster_info.stdout"
+
+    - name: Instalar Nginx Ingress Controller
+      ansible.builtin.command: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+
+    - name: Instalar Cert-manager
+      ansible.builtin.command: kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.15.3/cert-manager.yaml
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+
+    - name: Baixar e extrair Kube-prometheus
+      ansible.builtin.unarchive:
+        src: https://github.com/prometheus-operator/kube-prometheus/archive/main.zip
+        dest: /tmp/
+        remote_src: yes
+
+    - name: Verificar se os CRDs do Kube-prometheus já existem
+      ansible.builtin.command: kubectl get crd alertmanagerconfigs.monitoring.coreos.com
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+      register: crd_check
+      ignore_errors: yes
+
+    - name: Criar namespace e CRDs do Kube-prometheus
+      ansible.builtin.command: kubectl create -f /tmp/kube-prometheus-main/manifests/setup
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+      when: crd_check.rc != 0
+
+    - name: Aguardar criação do CRD "servicemonitors"
+      ansible.builtin.command: >
+        bash -c 'until kubectl get servicemonitors --all-namespaces ; do date; sleep 1; echo ""; done'
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+
+    - name: Verificar se os recursos do Kube-prometheus já existem
+      ansible.builtin.command: kubectl get all -n monitoring
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+      register: resources_check
+      ignore_errors: yes
+
+    - name: Criar recursos restantes do Kube-prometheus
+      ansible.builtin.command: kubectl create -f /tmp/kube-prometheus-main/manifests/
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+      when: resources_check.rc != 0
+
+    - name: Remover arquivos do Kube-prometheus
+      ansible.builtin.file:
+        path: /tmp/kube-prometheus-main
+        state: absent
+
+    - name: Verificar se o namespace giropops-senhas existe
+      ansible.builtin.command: kubectl get namespace giropops-senhas
+      register: namespace_check
+      ignore_errors: yes
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+
+    - name: Criar namespace giropops-senhas se não existir
+      ansible.builtin.command: kubectl create namespace giropops-senhas
+      when: namespace_check.rc != 0
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
+
+    - name: Aplicar manifestos do diretório /kind/manifests
+      ansible.builtin.command: kubectl apply -f {{ item }}
+      with_fileglob:
+        - "/home/nataliagranato/Downloads/LINUXtips-PICK/kind/manifests/*.yaml"
+      environment:
+        KUBECONFIG: /tmp/kind_kubeconfig
