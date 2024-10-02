@@ -24,7 +24,7 @@ sequenceDiagram
 
 ## Públicos
 
-- **Aplicação pode ser acessada localmente em**: [https://senhas.nataliagranato.xyz](https://senhas.nataliagranato.xyz)
+- **Aplicação pode ser acessada localmente em**: [https://senhas.nataliagranato.xyz](https://senhas.nataliagranato.xyz). Caso tenha problemas com o certificado, use a aba anônima.
 - **Documentação do Projeto**: [https://devops.nataliagranato.xyz](https://devops.nataliagranato.xyz)
 - **Pipelines**: [https://github.com/nataliagranato/LINUXtips-PICK/tree/develop/.github/workflows](https://github.com/nataliagranato/LINUXtips-PICK/tree/develop/.github/workflows)
 - **Fórum de Discussão para Dúvidas**: [https://github.com/nataliagranato/LINUXtips-PICK/discussions](https://github.com/nataliagranato/LINUXtips-PICK/discussions)
