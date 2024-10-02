@@ -19,11 +19,12 @@ sequenceDiagram
     Prometheus->>Grafana: Coleta de métricas
     Grafana->>User: Exibe painel de monitoramento
 ```
+
 # Links do Projeto
 
 ## Públicos
 
-- **Aplicação**: [https://senhas.nataliagranato.xyz](https://senhas.nataliagranato.xyz)
+- **Aplicação pode ser acessada localmente em**: [https://senhas.nataliagranato.xyz](https://senhas.nataliagranato.xyz)
 - **Documentação do Projeto**: [https://devops.nataliagranato.xyz](https://devops.nataliagranato.xyz)
 - **Pipelines**: [https://github.com/nataliagranato/LINUXtips-PICK/tree/develop/.github/workflows](https://github.com/nataliagranato/LINUXtips-PICK/tree/develop/.github/workflows)
 - **Fórum de Discussão para Dúvidas**: [https://github.com/nataliagranato/LINUXtips-PICK/discussions](https://github.com/nataliagranato/LINUXtips-PICK/discussions)
@@ -62,6 +63,15 @@ sequenceDiagram
 - **DependaBot**: Utilizado para manter as dependências atualizadas.
 - **Popeye**: Utilizado para verificação de configurações de cluster Kubernetes.
 - **Grafana**: Utilizado para visualização de métricas.
+
+## Utilizando em um cluster de desenvolvimento
+
+1. Clone o repositório:
+
+```bash
+ansible-playbook atualizar_etc_hosts.yml
+ansible-playbook deploy.yml
+```
 
 ## Utilizando a aplicação localmente
 
