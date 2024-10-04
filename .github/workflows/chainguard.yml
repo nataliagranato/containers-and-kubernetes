@@ -43,7 +43,7 @@ jobs:
 
     # Instalar Cosign
     - name: Instalar Cosign
-      uses: sigstore/cosign-installer@v3.6.0
+      uses: sigstore/cosign-installer@v3.7.0
 
     # Gerar chaves com Melange
     - name: Generate keys with Melange
