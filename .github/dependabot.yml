@@ -14,3 +14,38 @@ updates:
   directory: "/" # Localização do workflow YAML
   schedule:
     interval: "daily"
+
+- package-ecosystem: pip
+  directory: /chainguard/environments/dev
+  schedule:
+    interval: daily
+
+- package-ecosystem: pip
+  directory: /chainguard/environments/prd
+  schedule:
+    interval: daily
+
+- package-ecosystem: pip
+  directory: /chainguard/environments/staging
+  schedule:
+    interval: daily
+
+- package-ecosystem: pip
+  directory: /chainguard
+  schedule:
+    interval: daily
+
+- package-ecosystem: docker
+  directory: /redis
+  schedule:
+    interval: daily
+
+- package-ecosystem: docker
+  directory: /src
+  schedule:
+    interval: daily
+
+- package-ecosystem: pip
+  directory: /src
+  schedule:
+    interval: daily
