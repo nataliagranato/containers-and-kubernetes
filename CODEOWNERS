@@ -1,0 +1,12 @@
+# Proprietários padrão para todo o repositório
+* @nataliagranato
+
+# Proprietários específicos por diretório
+/src/ @nataliagranato
+/redis/ @nataliagranato
+/chainguard/ @nataliagranato
+
+# Proprietários específicos por tipo de arquivo
+*.py @nataliagranato
+*.yml @nataliagranato
+Dockerfile @nataliagranato
