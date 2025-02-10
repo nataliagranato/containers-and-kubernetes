@@ -32,7 +32,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           setup-python-dependencies: false
-          verbosity: "info"  # Changing verbosity level to "info" for more detailed output
+          verbosity: "info"  # Ensure verbosity level is set to "info"
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
