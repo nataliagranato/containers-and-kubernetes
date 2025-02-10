@@ -33,6 +33,7 @@ jobs:
           languages: ${{ matrix.language }}
           # Desabilitar configuração padrão
           setup-python-dependencies: false
+          verbosity: "warnings" 
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
