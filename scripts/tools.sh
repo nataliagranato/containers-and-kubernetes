@@ -1,20 +1,22 @@
 #!/bin/bash
+set -euo pipefail
 
 # Instalando o Docker
 
-# Baixando o script de instalação do Docker
-curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
+# Baixando o script de instalação do Docker de forma segura
+TMP_DOCKER_SCRIPT=$(mktemp)
+curl -fsSL https://get.docker.com -o "$TMP_DOCKER_SCRIPT"
 
 # Verificando o hash SHA256 do script (atualize o hash se necessário)
 EXPECTED_HASH="0158433a384a7ef6d60b6d58e556f4587dc9e1ee9768dae8958266ffb4f84f6f"
-ACTUAL_HASH=$(sha256sum /tmp/get-docker.sh | awk '{print $1}')
+ACTUAL_HASH=$(sha256sum "$TMP_DOCKER_SCRIPT" | awk '{print $1}')
 
 if [ "$EXPECTED_HASH" != "$ACTUAL_HASH" ]; then
   echo "[ERRO] O hash do script get-docker.sh não confere! Abortando instalação por segurança."
   exit 1
 fi
 
-bash /tmp/get-docker.sh
+bash "$TMP_DOCKER_SCRIPT"
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose 
