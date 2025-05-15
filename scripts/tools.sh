@@ -12,7 +12,8 @@ EXPECTED_HASH="0158433a384a7ef6d60b6d58e556f4587dc9e1ee9768dae8958266ffb4f84f6f"
 ACTUAL_HASH=$(sha256sum "$TMP_DOCKER_SCRIPT" | awk '{print $1}')
 
 if [ "$EXPECTED_HASH" != "$ACTUAL_HASH" ]; then
-  echo "[ERRO] O hash do script get-docker.sh não confere! Abortando instalação por segurança."
+  echo "[ERRO] O hash do script get-docker.sh não confere! Abortando instalação por segurança." >&2
+  rm -f "$TMP_DOCKER_SCRIPT"
   exit 1
 fi
 
