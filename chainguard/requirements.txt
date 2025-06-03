@@ -3,8 +3,8 @@ Flask==3.1.1 \
 redis==6.2.0 \
     --hash=sha256:c8ddf316ee0aab65f04a11229e94a64b2618451dab7a67cb2f77eb799d872d5e \
     --hash=sha256:e821f129b75dde6cb99dd35e5c76e8c49512a5a0d8dfdc560b2fbd44b85ca977
-prometheus-client==0.22.0 \
-    --hash=sha256:18da1d2241ac2d10c8d2110f13eedcd5c7c0c8af18c926e8731f04fc10cd575c \
-    --hash=sha256:c8951bbe64e62b96cd8e8f5d917279d1b9b91ab766793f33d4dce6c228558713
+prometheus-client==0.22.1 \
+    --hash=sha256:190f1331e783cf21eb60bca559354e0a4d4378facecf78f5428c39b675d20d28 \
+    --hash=sha256:cca895342e308174341b2cbf99a56bef291fbc0ef7b9e5412a0f26d653ba7094
 Werkzeug==3.1.3 \
     --hash=sha256:54b78bf3716d19a65be4fceccc0d1d7b89e608834989dfae50ea87564639213e
