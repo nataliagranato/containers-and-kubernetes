@@ -15,6 +15,7 @@ jobs:
       actions: read
       contents: read
       security-events: write
+      packages: write
 
     steps:
     # Checkout do código
@@ -66,17 +67,43 @@ jobs:
         cd chainguard/environments/prd
         apko build apko-prod.yaml senhas senhas-prod.tar -k melange.rsa.pub --arch amd64
     
+    # Gerar nome único para a tag
+    - name: Gerar nome único para a tag
+      id: generate-tag
+      run: |
+        # Obtém os primeiros 5 dígitos do hash do commit e a data
+        SHORT_HASH=${GITHUB_SHA:0:5}
+        TIMESTAMP=$(date +%Y%m%d%H%M%S)
+        echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
+        echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_OUTPUT
+
     # Log in no GitHub Container Registry
     - name: Log in to GitHub Container Registry
       env:
-          CR_PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      run: echo $CR_PAT | docker login ghcr.io -u nataliagranato --password-stdin
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: echo $GITHUB_TOKEN | docker login ghcr.io -u nataliagranato --password-stdin
   
     # Load da imagem de container e push para o GitHub Container Registry
-    - name: Load Docker image
+    - name: Load Docker image and push
       run: |
         cd chainguard/environments/prd 
         docker load < senhas-prod.tar
         docker images
-        docker tag senhas:latest-amd64 ghcr.io/nataliagranato/giropops-senhas:$(date +%s)
-        docker push ghcr.io/nataliagranato/giropops-senhas:$(date +%s)
+        docker tag senhas:latest-amd64 ghcr.io/nataliagranato/giropops-senhas:${{ steps.generate-tag.outputs.tag }}
+        docker push ghcr.io/nataliagranato/giropops-senhas:${{ steps.generate-tag.outputs.tag }}
+
+    # Scan de segurança com Aqua Security Trivy    
+    - name: Aqua Security Trivy
+      uses: aquasecurity/trivy-action@6c175e9c4083a92bbca2f9724c8a5e33bc2d97a5 # 0.30.0
+      with:
+        image-ref: ghcr.io/nataliagranato/giropops-senhas:${{ steps.generate-tag.outputs.tag }}
+        format: 'sarif'
+        severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+        output: 'trivy-results.sarif'
+    
+    # Envio dos resultados do Trivy para a aba de Segurança do GitHub
+    - name: Fazer upload dos resultados do Trivy para a aba de Segurança do GitHub
+      uses: github/codeql-action/upload-sarif@ff0a06e83cb2de871e5a09832bc6a81e7276941f # v3.28.18
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
