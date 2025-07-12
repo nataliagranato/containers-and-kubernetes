@@ -80,8 +80,8 @@ jobs:
     # Log in no GitHub Container Registry
     - name: Log in to GitHub Container Registry
       env:
-          CR_PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      run: echo $CR_PAT | docker login ghcr.io -u nataliagranato --password-stdin
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: echo $GITHUB_TOKEN | docker login ghcr.io -u nataliagranato --password-stdin
   
     # Load da imagem de container e push para o GitHub Container Registry
     - name: Load Docker image and push
