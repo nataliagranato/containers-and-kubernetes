@@ -72,7 +72,7 @@ jobs:
       id: generate-tag
       run: |
         # Obtém os primeiros 5 dígitos do hash do commit e a data
-        SHORT_HASH=$(git log -1 --pretty=format:%h | cut -c1-5)
+        SHORT_HASH=${GITHUB_SHA:0:5}
         TIMESTAMP=$(date +%Y%m%d%H%M%S)
         echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
         echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_OUTPUT
