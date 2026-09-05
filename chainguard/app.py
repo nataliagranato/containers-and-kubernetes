@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import redis
 import string
-import random
+import secrets
 import os
 from prometheus_client import Counter, generate_latest  # Adicionando a importação necessária
 
@@ -12,7 +12,7 @@ redis_port = os.environ.get("REDIS_PORT")
 redis_user = os.environ.get("REDIS_USER")
 redis_pass = os.environ.get("REDIS_PASS")
 
-r = redis.StrictRedis(host=redis_host, port=redis_port, password="", decode_responses=True)
+r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_pass or None, decode_responses=True)
 
 senha_gerada_counter = Counter('senha_gerada', 'Contador de senhas geradas')
 
@@ -26,7 +26,7 @@ def criar_senha(tamanho, incluir_numeros, incluir_caracteres_especiais):
     if incluir_caracteres_especiais:
         caracteres += string.punctuation
 
-    senha = ''.join(random.choices(caracteres, k=tamanho))
+    senha = ''.join(secrets.choice(caracteres) for _ in range(tamanho))
 
     return senha
 
@@ -77,4 +77,4 @@ def ping():
    return jsonify({"status": "healthy"}), 200
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=False, host=os.environ.get('FLASK_HOST', '0.0.0.0'), port=5000)  # nosec B104
