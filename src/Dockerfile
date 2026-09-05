@@ -1,4 +1,4 @@
-FROM cgr.dev/chainguard/python:latest-dev as builder
+FROM cgr.dev/chainguard/python:latest-dev AS builder
 WORKDIR /app
 COPY requirements.txt .
 
@@ -10,7 +10,7 @@ FROM cgr.dev/chainguard/python:latest
 WORKDIR /app
 
 # Copiar apenas os arquivos necessários
-COPY --from=builder /usr/lib/python3.13/site-packages /usr/lib/python3.13/site-packages
+COPY --from=builder /home/nonroot/.local /home/nonroot/.local
 COPY app.py .
 
 ENV REDIS_HOST="redis-server"
