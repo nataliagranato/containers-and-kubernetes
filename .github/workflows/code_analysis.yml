@@ -32,4 +32,9 @@ jobs:
     - name: Run security checks
       run: |
         bandit -r .
-        safety check
+        safety check \
+          -r src/requirements.txt \
+          -r chainguard/requirements.txt \
+          -r chainguard/environments/dev/requirements.txt \
+          -r chainguard/environments/prd/requirements.txt \
+          -r chainguard/environments/staging/requirements.txt
