@@ -34,18 +34,18 @@ jobs:
     # Instalar Melange
     - name: Install Melange
       run: |
-        wget https://github.com/chainguard-dev/melange/releases/download/v0.11.2/melange_0.11.2_linux_386.tar.gz
-        tar -xzf melange_0.11.2_linux_386.tar.gz
-        cd melange_0.11.2_linux_386
+        wget https://github.com/chainguard-dev/melange/releases/download/v0.11.2/melange_0.11.2_linux_amd64.tar.gz
+        tar -xzf melange_0.11.2_linux_amd64.tar.gz
+        cd melange_0.11.2_linux_amd64
         sudo mv melange /usr/local/bin/
         melange version
 
     # Instalar APKO
     - name: Install APKO
       run: |
-        wget https://github.com/chainguard-dev/apko/releases/download/v0.14.7/apko_0.14.7_linux_386.tar.gz
-        tar -xzf apko_0.14.7_linux_386.tar.gz
-        cd apko_0.14.7_linux_386
+        wget https://github.com/chainguard-dev/apko/releases/download/v0.14.7/apko_0.14.7_linux_amd64.tar.gz
+        tar -xzf apko_0.14.7_linux_amd64.tar.gz
+        cd apko_0.14.7_linux_amd64
         sudo mv apko /usr/local/bin/
         apko version
 
@@ -99,8 +99,7 @@ jobs:
             # Obtém os primeiros 5 dígitos do hash do commit e a data
             SHORT_HASH=$(git log -1 --pretty=format:%h | cut -c1-5)
             TIMESTAMP=$(date +%Y%m%d%H%M%S)
-            echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
-            echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"
+            echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> "$GITHUB_OUTPUT"
 
     # Fazer push da imagem Docker
     - name: Push Docker image
@@ -113,10 +112,10 @@ jobs:
     - name: Aqua Security Trivy
       uses: aquasecurity/trivy-action@6c175e9c4083a92bbca2f9724c8a5e33bc2d97a5 # 0.30.0
       with:
-            image-ref: nataliagranato/senhas:${{ steps.generate-tag.outputs.tag }}
-            format: 'sarif'
-            severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
-            output: 'trivy-results.sarif'
+        image-ref: '${{ secrets.DOCKER_USERNAME }}/senhas:${{ steps.generate-tag.outputs.tag }}'
+        format: 'sarif'
+        severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+        output: 'trivy-results.sarif'
     
     # Envio dos resultados do Trivy para a aba de Segurança do GitHub
     - name: Fazer upload dos resultados do Trivy para a aba de Segurança do GitHub

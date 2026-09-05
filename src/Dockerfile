@@ -3,7 +3,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Instalar dependências em uma única camada
-RUN pip install --no-cache-dir --upgrade pip && \
+RUN python -m pip install --no-cache-dir --upgrade "pip>=25.3" && \
     pip install --no-cache-dir -r requirements.txt --user
 
 FROM cgr.dev/chainguard/python:latest

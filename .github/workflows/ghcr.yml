@@ -34,18 +34,18 @@ jobs:
     # Instalar Melange
     - name: Install Melange
       run: |
-        wget https://github.com/chainguard-dev/melange/releases/download/v0.11.2/melange_0.11.2_linux_386.tar.gz
-        tar -xzf melange_0.11.2_linux_386.tar.gz
-        cd melange_0.11.2_linux_386
+        wget https://github.com/chainguard-dev/melange/releases/download/v0.11.2/melange_0.11.2_linux_amd64.tar.gz
+        tar -xzf melange_0.11.2_linux_amd64.tar.gz
+        cd melange_0.11.2_linux_amd64
         sudo mv melange /usr/local/bin/
         melange version
 
     # Instalar APKO
     - name: Install APKO
       run: |
-        wget https://github.com/chainguard-dev/apko/releases/download/v0.14.7/apko_0.14.7_linux_386.tar.gz
-        tar -xzf apko_0.14.7_linux_386.tar.gz
-        cd apko_0.14.7_linux_386
+        wget https://github.com/chainguard-dev/apko/releases/download/v0.14.7/apko_0.14.7_linux_amd64.tar.gz
+        tar -xzf apko_0.14.7_linux_amd64.tar.gz
+        cd apko_0.14.7_linux_amd64
         sudo mv apko /usr/local/bin/
         apko version
 

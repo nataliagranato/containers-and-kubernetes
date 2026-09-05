@@ -53,8 +53,7 @@ jobs:
             # Obtém os primeiros 5 dígitos do hash do commit e a data
             SHORT_HASH=$(git log -1 --pretty=format:%h | cut -c1-5)
             TIMESTAMP=$(date +%Y%m%d%H%M%S)
-            echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> $GITHUB_ENV
-            echo "::set-output name=tag::${SHORT_HASH}-${TIMESTAMP}"
+            echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> "$GITHUB_OUTPUT"
         
       - name: Construir e enviar a imagem Docker
         uses: docker/build-push-action@1dc73863535b631f98b2378be8619f83b136f4a0 # v6.17.0

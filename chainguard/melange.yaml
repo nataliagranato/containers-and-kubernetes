@@ -37,4 +37,5 @@ pipeline:
     cp -r templates "${WEBAPPDIR}"
     cp -r static "${WEBAPPDIR}"
     virtualenv "${WEBAPPDIR}/venv"
-    sh -c "source '${WEBAPPDIR}/venv/bin/activate' && pip install -r requirements.txt"
+    "${WEBAPPDIR}/venv/bin/python" -m pip install --no-cache-dir --upgrade "pip>=25.3"
+    "${WEBAPPDIR}/venv/bin/python" -m pip install --no-cache-dir -r requirements.txt
