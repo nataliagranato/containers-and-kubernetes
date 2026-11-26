@@ -24,7 +24,7 @@ jobs:
         egress-policy: audit
 
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-    - uses: chainguard-dev/digestabot@43222237fd8a07dc41a06ca13e931c95ce2cedac # v1.2.2
+    - uses: chainguard-dev/digestabot@3e895adcf935bab7a21ebef6173d7cd4375822ab # v1.3.3
       with:
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         signoff: true 
