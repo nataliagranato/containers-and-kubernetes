@@ -56,7 +56,7 @@ jobs:
             echo "tag=${SHORT_HASH}-${TIMESTAMP}" >> "$GITHUB_OUTPUT"
         
       - name: Construir e enviar a imagem Docker
-        uses: docker/build-push-action@1dc73863535b631f98b2378be8619f83b136f4a0 # v6.17.0
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
         id: build-and-push
         with:
           context: ./redis
